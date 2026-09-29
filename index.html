@@ -58,44 +58,35 @@
         .hero-text a, .hero-text .badge, button, input, textarea { text-shadow: none !important; }
         .hero-text { text-shadow: 0 2px 18px rgba(2,6,16,.85), 0 1px 2px rgba(2,6,16,.6); }
         .nav-link.active { color: #d8d9de; }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #d8d9de; outline-offset: 3px; border-radius: 6px; }
+        .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #d8d9de; color: #111826; padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; transition: top .2s; text-shadow: none; }
+        .skip-link:focus { top: 1rem; }
+        .section-label { display: flex; align-items: center; gap: .75rem; }
+        .section-label::before { content: ""; width: 2rem; height: 2px; background: linear-gradient(90deg, #d8d9de, transparent); }
+        .contact-center .section-label { justify-content: center; }
+        .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .tech-logo i { filter: grayscale(1) brightness(1.15); transition: filter .3s, transform .3s; }
+        .tech-logo:hover i { filter: none; transform: translateY(-3px); }
+        @media (prefers-reduced-motion: reduce) {
+            .caret, .animate-bounce, .animate-pulse { animation: none !important; }
+        }
         @media (prefers-reduced-motion: reduce) {
             .reveal { opacity: 1; transform: none; transition: none; }
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        slate: {
-                            50: '#f8f9fb', 100: '#eceef2', 200: '#dcdfe6', 300: '#c3c8d3',
-                            400: '#c3c8d3', 500: '#98a0b1', 600: '#4a5468',
-                            700: '#2f3b52', 800: '#212b3f', 900: '#171f30', 950: '#111826'
-                        },
-                        brand: {
-                            50: '#f5f5f7',
-                            500: '#d8d9de',
-                            600: '#b9bcc6',
-                            900: '#3a4256',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
+    <a href="#main" class="skip-link">Skip to content</a>
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
@@ -129,6 +120,7 @@
         </nav>
     </header>
 
+    <main id="main">
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
         <img src="img/hero-bg.jpg" alt="" aria-hidden="true" width="1920" height="1078" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-80 pointer-events-none select-none">
@@ -146,6 +138,9 @@
             <h2 class="text-xl sm:text-4xl font-bold text-slate-200 mb-6">
                 I build scalable web platforms, financial tools & enterprise systems.
             </h2>
+            <p class="font-mono text-sm sm:text-base text-brand-500 mb-5 min-h-[1.5rem]" aria-label="Java Vert.x, Laravel, Vue.js, PostgreSQL">
+                <span class="text-slate-500">&gt;</span> <span id="typed">Java Vert.x</span><span class="caret" aria-hidden="true">|</span>
+            </p>
             <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8">
                 Software Engineering Student at The Co-operative University of Kenya. Specialized in building event-driven architectures with Java Vert.x, robust web platforms with Laravel, reactive interfaces using Vue.js, and complex relational database systems.
             </p>
@@ -162,12 +157,25 @@
                 </a>
             </div>
         </div>
+        <a href="#about" aria-label="Scroll down" class="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-xs font-mono text-slate-400 hover:text-white transition-colors">
+            scroll <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- Numbers strip -->
+    <section aria-label="At a glance" class="border-t border-slate-900 bg-slate-900/40 px-4 sm:px-6 py-8">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="8">8</span></div><div class="text-xs font-mono text-slate-400 mt-1">Projects built</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="5">5</span></div><div class="text-xs font-mono text-slate-400 mt-1">Live platforms</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="2">2</span></div><div class="text-xs font-mono text-slate-400 mt-1">Backend stacks</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="2">2</span></div><div class="text-xs font-mono text-slate-400 mt-1">Database engines</div></div>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">01. About Me</h2>
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">01. About Me</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-8">Engineering Full-Stack Systems & Cloud Deployments</h3>
 
             <div class="grid md:grid-cols-3 gap-8 text-slate-400 leading-relaxed">
@@ -196,8 +204,21 @@
     <!-- Skills Section -->
     <section id="skills" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">02. Tech Stack</h2>
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">02. Tech Stack</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Tools & Technologies</h3>
+
+            <div class="flex flex-wrap justify-center sm:justify-start gap-x-8 gap-y-6 mb-10" role="list" aria-label="Technologies">
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-java-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Java</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-laravel-original colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Laravel</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-php-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">PHP</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-vuejs-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Vue.js</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-vuetify-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Vuetify</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-tailwindcss-original colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Tailwind</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-postgresql-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">PostgreSQL</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-mysql-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">MySQL</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-git-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Git</div></div>
+                <div class="tech-logo text-center w-16" role="listitem"><i class="devicon-linux-plain colored text-4xl"></i><div class="text-[11px] font-mono text-slate-400 mt-2">Linux</div></div>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Backend -->
@@ -251,10 +272,40 @@
         </div>
     </section>
 
+    <!-- How I Build Section -->
+    <section id="approach" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">03. How I Build</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Principles Behind Every System</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 hover:border-slate-700 transition-colors">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-cubes"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-2">Modular design</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Clear modules and services, so features can grow or change without breaking the rest of the system.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 hover:border-slate-700 transition-colors">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-database"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-2">Database integrity</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Careful schema design, migrations and relational modeling keep data consistent, from ledgers to patient records.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 hover:border-slate-700 transition-colors">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-bolt"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-2">Non-blocking by default</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Event-driven Java Vert.x services that handle asynchronous work without holding up other requests.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 hover:border-slate-700 transition-colors">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-rocket"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-2">Shipped, not just built</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Deployed on Render with custom domains and DNS, so the work runs live for real users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">03. Featured Work</h2>
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">04. Featured Work</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Live Web Platforms & Systems</h3>
 
             <!-- Group 1: Live Domain Platforms -->
@@ -264,9 +315,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 
                 <!-- BioPay -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
-                <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open BioPay" class="block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open BioPay" class="relative block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
                     <img src="img/biopay.jpg" alt="Screenshot of the BioPay website" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
@@ -293,9 +345,10 @@
                 </div>
 
                 <!-- Derrick Gallery -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
-                <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Derrick Gallery" class="block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Derrick Gallery" class="relative block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
                     <img src="img/automoti.jpg" alt="Screenshot of the Derrick Gallery website" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
@@ -322,9 +375,10 @@
                 </div>
 
                 <!-- RemitCore -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
-                <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open RemitCore" class="block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open RemitCore" class="relative block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
                     <img src="img/remitcore.jpg" alt="Screenshot of the RemitCore website" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
@@ -351,9 +405,10 @@
                 </div>
 
                 <!-- Salaryd -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
-                <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Salaryd" class="block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Salaryd" class="relative block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
                     <img src="img/salaryd.jpg" alt="Screenshot of the Salaryd website" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
@@ -381,9 +436,10 @@
                 </div>
 
                 <!-- CountComply -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
-                <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open CountComply" class="block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open CountComply" class="relative block -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
                     <img src="img/countcomply.jpg" alt="Screenshot of the CountComply website" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
@@ -495,9 +551,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6 text-center">
+    <section id="contact" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6 text-center contact-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">04. Next Steps</h2>
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">05. Next Steps</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Connect</h3>
             <p class="text-slate-400 mb-8 leading-relaxed">
                 I am actively seeking software engineering roles, backend contracts, and technical collaborations. Feel free to reach out to discuss system architecture or technical opportunities.
@@ -551,9 +607,16 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="py-6 border-t border-slate-900 text-center text-xs font-mono text-slate-500">
-        <p>Designed & Built by Derrick Barasa &copy; 2026</p>
+        <div class="flex justify-center gap-5 mb-3 text-base">
+            <a href="https://github.com/derrickbarasa" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:barasaderrick499@gmail.com" aria-label="Email" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>Designed & Built by Derrick Barasa &copy; <span id="year">2026</span></p>
     </footer>
 
     <button id="to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-brand-500 text-slate-950 shadow-lg opacity-0 pointer-events-none transition-opacity">
@@ -600,6 +663,39 @@
             }), { rootMargin: '-40% 0px -55% 0px' });
             document.querySelectorAll('section[id]').forEach(sec => spy.observe(sec));
         }
+
+        // Typing line
+        const typedEl = document.getElementById('typed');
+        const words = ['Java Vert.x', 'Laravel', 'Vue.js', 'PostgreSQL', 'Event-driven systems'];
+        const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!calm) {
+            let w = 0, c = 0, del = false;
+            (function tick() {
+                const word = words[w];
+                typedEl.textContent = word.slice(0, c);
+                let delay = del ? 40 : 90;
+                if (!del && c === word.length) { del = true; delay = 1400; }
+                else if (del && c === 0) { del = false; w = (w + 1) % words.length; delay = 350; }
+                c += del ? -1 : 1;
+                setTimeout(tick, delay);
+            })();
+        }
+
+        // Count-up numbers
+        if ('IntersectionObserver' in window && !calm) {
+            const co = new IntersectionObserver(entries => entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                const el = en.target, end = +el.dataset.count, t0 = performance.now();
+                (function step(t) {
+                    const p = Math.min((t - t0) / 900, 1);
+                    el.textContent = Math.round(end * p);
+                    if (p < 1) requestAnimationFrame(step);
+                })(t0);
+                co.unobserve(el);
+            }), { threshold: 0.6 });
+            document.querySelectorAll('[data-count]').forEach(el => { el.textContent = '0'; co.observe(el); });
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
 
         // Back to top
         const toTop = document.getElementById('to-top');
