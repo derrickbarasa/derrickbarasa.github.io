@@ -7,6 +7,14 @@
     <meta name="description" content="Derrick Barasa - Software Engineering student at The Co-operative University of Kenya. Building scalable web platforms, fintech tools and enterprise systems with Java Vert.x, Laravel and Vue.js.">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#111826">
+    <script>
+        (function () {
+            var t = 'dark';
+            try { var saved = localStorage.getItem('theme'); if (saved === 'light' || saved === 'dark') t = saved; } catch (e) {}
+            document.documentElement.setAttribute('data-theme', t);
+            if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f6fa');
+        })();
+    </script>
     <meta name="author" content="Derrick Barasa">
     <meta name="keywords" content="Derrick Barasa, software engineer, Kenya, Nairobi, Java Vert.x, Laravel, Vue.js, PostgreSQL, fintech, full-stack developer, portfolio">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -45,29 +53,36 @@
       ]
     }
     </script>
-    <link rel="icon" type="image/png" href="logo-mark.png">
+    <link rel="icon" type="image/png" href="logo-mark.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="logo-mark-dark.png" media="(prefers-color-scheme: light)">
     <style>
         html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
         body { overflow-x: hidden; }
-        p, li { text-shadow: 0 1px 8px rgba(2,6,16,.45); }
+        p, li { text-shadow: var(--ts-soft); }
         img { max-width: 100%; }
         h1, h2, h3, h4, h5, p, a { overflow-wrap: anywhere; }
         @media (max-width: 400px) { section { padding-left: 1rem !important; padding-right: 1rem !important; } }
         .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.visible { opacity: 1; transform: none; }
         .hero-text a, .hero-text .badge, button, input, textarea { text-shadow: none !important; }
-        .hero-text { text-shadow: 0 2px 18px rgba(2,6,16,.85), 0 1px 2px rgba(2,6,16,.6); }
-        .nav-link.active { color: #d8d9de; }
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #d8d9de; outline-offset: 3px; border-radius: 6px; }
-        .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #d8d9de; color: #111826; padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; transition: top .2s; text-shadow: none; }
+        .hero-text { text-shadow: var(--ts-hero); }
+        .nav-link.active { color: rgb(var(--brand-500)); }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid rgb(var(--brand-500)); outline-offset: 3px; border-radius: 6px; }
+        .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: rgb(var(--brand-500)); color: rgb(var(--slate-950)); padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; transition: top .2s; text-shadow: none; }
         .skip-link:focus { top: 1rem; }
         .section-label { display: flex; align-items: center; gap: .75rem; }
-        .section-label::before { content: ""; width: 2rem; height: 2px; background: linear-gradient(90deg, #d8d9de, transparent); }
+        .section-label::before { content: ""; width: 2rem; height: 2px; background: linear-gradient(90deg, rgb(var(--brand-500)), transparent); }
         .contact-center .section-label { justify-content: center; }
+        [data-theme="light"] .only-dark { display: none !important; }
+        :root:not([data-theme="light"]) .only-light { display: none !important; }
+        [data-theme="light"] .i-sun { display: none; }
+        :root:not([data-theme="light"]) .i-moon { display: none; }
+        .theme-anim, .theme-anim * { transition: background-color .3s ease, color .3s ease, border-color .3s ease !important; }
         .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
         @keyframes blink { 50% { opacity: 0; } }
         .tech-logo i { filter: grayscale(1) brightness(1.15); transition: filter .3s, transform .3s; }
-        .tech-logo:hover i { filter: none; transform: translateY(-3px); }
+        [data-theme="light"] .tech-logo i { filter: grayscale(1) brightness(.55) contrast(1.2); }
+        .tech-logo:hover i, [data-theme="light"] .tech-logo:hover i { filter: none; transform: translateY(-3px); }
         @media (prefers-reduced-motion: reduce) {
             .caret, .animate-bounce, .animate-pulse { animation: none !important; }
         }
@@ -92,7 +107,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                <img src="logo-mark.png" alt="DB logo" class="h-8 sm:h-9 w-auto"><span class="hidden sm:inline text-sm font-semibold tracking-[0.2em] uppercase">Derrick Barasa</span>
+                <img src="logo-mark.png" alt="DB logo" class="only-dark h-8 sm:h-9 w-auto"><img src="logo-mark-dark.png" alt="" aria-hidden="true" class="only-light h-8 sm:h-9 w-auto"><span class="hidden sm:inline text-sm font-semibold tracking-[0.2em] uppercase">Derrick Barasa</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
                 <a href="#about" class="nav-link hover:text-brand-500 transition-colors">About</a>
@@ -107,6 +122,9 @@
                 <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-white transition-colors">
                     <i class="fa-brands fa-linkedin text-xl"></i>
                 </a>
+                <button id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" class="text-slate-400 hover:text-white transition-colors w-6 text-center">
+                    <i class="fa-solid fa-sun i-sun text-xl"></i><i class="fa-solid fa-moon i-moon text-xl"></i>
+                </button>
                 <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-slate-300 hover:text-white">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
@@ -123,7 +141,8 @@
     <main id="main">
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
-        <img src="img/hero-bg.jpg" alt="" aria-hidden="true" width="1920" height="1078" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-80 pointer-events-none select-none">
+        <img src="img/hero-bg.jpg" alt="" aria-hidden="true" width="1920" height="1078" fetchpriority="high" class="only-dark absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-80 pointer-events-none select-none">
+        <img src="img/hero-bg-light.jpg" alt="" aria-hidden="true" width="1920" height="1078" loading="lazy" class="only-light absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center pointer-events-none select-none">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-slate-950/25 sm:from-slate-950/75 sm:via-slate-950/30 sm:to-transparent pointer-events-none"></div>
         <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none"></div>
 
@@ -624,6 +643,26 @@
     </button>
 
     <script>
+        // Theme toggle (dark by default, choice remembered)
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        function syncThemeUi() {
+            const light = document.documentElement.getAttribute('data-theme') === 'light';
+            themeBtn.setAttribute('aria-pressed', light);
+            themeBtn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+            themeMeta.setAttribute('content', light ? '#f4f6fa' : '#111826');
+        }
+        syncThemeUi();
+        themeBtn.addEventListener('click', () => {
+            const root = document.documentElement;
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            root.classList.add('theme-anim');
+            root.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            syncThemeUi();
+            setTimeout(() => root.classList.remove('theme-anim'), 400);
+        });
+
         // Mobile menu
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
