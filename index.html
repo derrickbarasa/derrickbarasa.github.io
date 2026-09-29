@@ -663,6 +663,9 @@
             setTimeout(() => root.classList.remove('theme-anim'), 400);
         });
 
+        // Warm the cache with the light hero so the first switch is instant
+        window.addEventListener('load', () => setTimeout(() => { new Image().src = 'img/hero-bg-light.jpg'; }, 1200));
+
         // Mobile menu
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
