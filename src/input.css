@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens (space-separated RGB so Tailwind opacity modifiers work).
+   Dark is the default; light applies with <html data-theme="light">. */
+@layer base {
+  :root {
+    color-scheme: dark;
+    --white: 255 255 255;
+    --slate-50: 248 249 251;  --slate-100: 236 238 242; --slate-200: 220 223 230;
+    --slate-300: 195 200 211; --slate-400: 195 200 211; --slate-500: 152 160 177;
+    --slate-600: 74 84 104;   --slate-700: 47 59 82;    --slate-800: 33 43 63;
+    --slate-900: 23 31 48;    --slate-950: 17 24 38;
+    --brand-50: 245 245 247;  --brand-500: 216 217 222; --brand-600: 185 188 198; --brand-900: 58 66 86;
+    --ts-soft: 0 1px 8px rgb(2 6 16 / .45);
+    --ts-hero: 0 2px 18px rgb(2 6 16 / .85), 0 1px 2px rgb(2 6 16 / .6);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --white: 15 23 42;
+    --slate-50: 11 17 30;     --slate-100: 17 24 38;    --slate-200: 30 41 59;
+    --slate-300: 45 55 76;    --slate-400: 63 74 96;    --slate-500: 90 102 125;
+    --slate-600: 132 143 163; --slate-700: 200 208 222; --slate-800: 219 225 236;
+    --slate-900: 255 255 255; --slate-950: 244 246 250;
+    --brand-50: 232 238 249;  --brand-500: 30 58 110;   --brand-600: 21 42 85;   --brand-900: 200 212 235;
+    --ts-soft: none;
+    --ts-hero: none;
+  }
+}
