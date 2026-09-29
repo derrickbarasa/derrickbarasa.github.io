@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derrick Barasa | Software Engineer Portfolio</title>
+    <meta name="description" content="Derrick Barasa - Software Engineering student at The Co-operative University of Kenya. Building scalable web platforms, fintech tools and enterprise systems with Java Vert.x, Laravel and Vue.js.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#111826">
+    <meta property="og:title" content="Derrick Barasa | Software Engineer Portfolio">
+    <meta property="og:description" content="Scalable web platforms, financial tools & enterprise systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://derrickbarasa.github.io/logo.jpg">
+    <meta property="og:url" content="https://derrickbarasa.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="logo-mark.png">
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+        body { overflow-x: hidden; }
+        img { max-width: 100%; }
+        h1, h2, h3, h4, h5, p, a { overflow-wrap: anywhere; }
+        @media (max-width: 400px) { section { padding-left: 1rem !important; padding-right: 1rem !important; } }
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .nav-link.active { color: #d8d9de; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            html { scroll-behavior: auto !important; }
+        }
+    </style>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            50: '#f8f9fb', 100: '#eceef2', 200: '#dcdfe6', 300: '#c3c8d3',
+                            400: '#98a0b1', 500: '#6b7488', 600: '#4a5468',
+                            700: '#2f3b52', 800: '#212b3f', 900: '#171f30', 950: '#111826'
+                        },
+                        brand: {
+                            50: '#f5f5f7',
+                            500: '#d8d9de',
+                            600: '#b9bcc6',
+                            900: '#3a4256',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
+                <img src="logo-mark.png" alt="DB logo" class="h-8 sm:h-9 w-auto"><span class="hidden sm:inline text-sm font-semibold tracking-[0.2em] uppercase">Derrick Barasa</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="nav-link hover:text-brand-500 transition-colors">About</a>
+                <a href="#skills" class="nav-link hover:text-brand-500 transition-colors">Skills</a>
+                <a href="#projects" class="nav-link hover:text-brand-500 transition-colors">Projects</a>
+                <a href="#contact" class="nav-link hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <a href="https://github.com/derrickbarasa" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-slate-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 px-4 sm:px-6 py-4 space-y-3 text-sm font-medium text-slate-300">
+            <a href="#about" class="block hover:text-brand-500">About</a>
+            <a href="#skills" class="block hover:text-brand-500">Skills</a>
+            <a href="#projects" class="block hover:text-brand-500">Projects</a>
+            <a href="#contact" class="block hover:text-brand-500">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-left z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-brand-500 font-mono text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Available for Engineering Roles
+            </div>
+            <h1 class="text-3xl min-[400px]:text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4">
+                Hi, I'm Derrick Barasa.
+            </h1>
+            <h2 class="text-xl sm:text-4xl font-bold text-slate-400 mb-6">
+                I build scalable web platforms, financial tools & enterprise systems.
+            </h2>
+            <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl mb-8">
+                Software Engineering Student at <span class="text-slate-200 font-medium">The Co-operative University of Kenya</span>. Specialized in building event-driven architectures with Java Vert.x, robust web platforms with Laravel, reactive interfaces using Vue.js, and complex relational database systems.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 font-medium text-sm">
+                <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-slate-950 font-semibold transition-all shadow-lg shadow-white/5">
+                    View My Projects
+                </a>
+                <a href="#contact" class="px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 transition-all">
+                    Get in Touch
+                </a>
+                <a href="tel:+254793539606" class="px-6 py-3 rounded-lg text-slate-400 hover:text-brand-500 transition-colors inline-flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> +254 793539606
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">01. About Me</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-8">Engineering Full-Stack Systems & Cloud Deployments</h3>
+
+            <div class="grid md:grid-cols-3 gap-8 text-slate-400 leading-relaxed">
+                <div class="md:col-span-2 space-y-4">
+                    <p>
+                        I am a Software Engineering student focused on engineering high-performance microservices, full-stack enterprise web platforms, and production-grade software applications.
+                    </p>
+                    <p>
+                        My work spans custom domain production deployments (<span class="text-slate-200 font-medium">biopay.africa</span>, <span class="text-slate-200 font-medium">automoti.site</span>, <span class="text-slate-200 font-medium">remitcore.com</span>) as well as internal enterprise systems ranging from private HR and accounting platforms to healthcare and compliance systems.
+                    </p>
+                    <p>
+                        I focus on modular software design, database integrity, non-blocking asynchronous event handling, and practical cloud infrastructure.
+                    </p>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800/80 p-6 rounded-xl space-y-4 font-mono text-sm">
+                    <div class="text-slate-300 font-semibold font-sans border-b border-slate-800 pb-2">Quick Snapshot</div>
+                    <div><span class="text-slate-500">Education:</span><br><span class="text-slate-200">BSc Software Engineering</span></div>
+                    <div><span class="text-slate-500">Institution:</span><br><span class="text-slate-200">The Co-operative University of Kenya</span></div>
+                    <div><span class="text-slate-500">Core Stack:</span><br><span class="text-slate-200">Java Vert.x, Laravel, Vue.js</span></div>
+                    <div><span class="text-slate-500">DBs & Cloud:</span><br><span class="text-slate-200">PostgreSQL, MySQL, Render</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">02. Tech Stack</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Tools & Technologies</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Backend -->
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-server"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-3">Backend</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Java (Eclipse Vert.x)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> PHP (Laravel)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> RESTful API Architecture</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Asynchronous Event Loops</li>
+                    </ul>
+                </div>
+
+                <!-- Frontend -->
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-code"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-3">Frontend</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Vue.js</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Vuetify</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> JavaScript (ES6+)</li>
+                    </ul>
+                </div>
+
+                <!-- Database -->
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-database"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-3">Databases</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> PostgreSQL</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> MySQL</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Schema Design & Migrations</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Relational Data Modeling</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Environment -->
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+                    <div class="text-brand-500 text-2xl mb-4"><i class="fa-solid fa-terminal"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-3">Tools & DevOps</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-mono">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Git & GitHub</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Render Deployment</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> DNS & Custom Domains</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> Linux / Ubuntu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">03. Featured Work</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Live Web Platforms & Systems</h3>
+
+            <!-- Group 1: Live Domain Platforms -->
+            <h4 class="text-lg font-mono font-bold text-brand-500 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-globe"></i> Live / Deployed Platforms
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- BioPay -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">BioPay</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Biometrics</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Biometric authentication and facial recognition payment infrastructure supporting secure offline-first transaction processing.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> ONNX runtime & liveness detection</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> Low-latency biometric payload processing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Biometrics</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java / Python</span>
+                        </div>
+                        <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> biopay.africa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Automoti -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Automoti</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Web Platform</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Automotive showcase platform engineered with Laravel and Tailwind CSS, deployed with custom DNS and automated delivery pipelines.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> Custom database migrations & REST routes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> Hosted on Render with custom DNS mapping</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Laravel</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Tailwind CSS</span>
+                        </div>
+                        <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> automoti.site
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RemitCore -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">RemitCore</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">FinTech</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Remittance processing engine built for handling transaction validation, currency routing, and payout workflows.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> Transaction processing pipeline</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-500"></i> Secure API integrations for financial payouts</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java Vert.x</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">PostgreSQL</span>
+                        </div>
+                        <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> remitcore.com
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Group 2: Enterprise Systems -->
+            <h4 class="text-lg font-mono font-bold text-brand-500 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-building"></i> Enterprise Systems & Internal Software
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Private HR System -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h5 class="text-lg font-bold text-white">Private HR & Payroll</h5>
+                            <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded">HR Tech</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                            Internal enterprise management system for handling employee onboarding, department hierarchies, payroll calculation, and tax deduction tracking.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Java Vert.x</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-lock"></i> Private Internal System</span>
+                    </div>
+                </div>
+
+                <!-- Hospital Management System -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h5 class="text-lg font-bold text-white">Hospital Nova (HMS)</h5>
+                            <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Healthcare</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                            Healthcare operations software handling electronic medical records (EMR), doctor appointment scheduling, and patient history logging.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Java Vert.x</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vuetify</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-shield-halved"></i> Healthcare Portal</span>
+                    </div>
+                </div>
+
+                <!-- Accounting System -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h5 class="text-lg font-bold text-white">Accounting System</h5>
+                            <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Finance</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                            Double-entry financial system for tracking ledgers, general journal entries, accounts payable/receivable, and automated financial reporting.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Laravel</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">MySQL</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-calculator"></i> Enterprise Finance</span>
+                    </div>
+                </div>
+
+                <!-- Compliance System -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h5 class="text-lg font-bold text-white">Compliance System</h5>
+                            <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Governance</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                            Regulatory oversight application for managing audit logs, policy enforcement tracking, document verification, and compliance status reports.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Java Vert.x</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-file-contract"></i> Audit & Governance</span>
+                    </div>
+                </div>
+
+                <!-- Canteen Management System -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <h5 class="text-lg font-bold text-white">Canteen System</h5>
+                            <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Operations</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                            Point-of-sale and food service order routing application featuring digital menu management, role-based order processing, and meal ticket issuance.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Java Vert.x</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
+                            <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-utensils"></i> POS & Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">04. Next Steps</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Connect</h3>
+            <p class="text-slate-400 mb-8 leading-relaxed">
+                I am actively seeking software engineering roles, backend contracts, and technical collaborations. Feel free to reach out to discuss system architecture or technical opportunities.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-4 mb-8 text-left">
+                <a href="mailto:barasaderrick499@gmail.com" class="bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 rounded-xl p-5 transition-all">
+                    <i class="fa-solid fa-envelope text-brand-500 text-xl mb-3"></i>
+                    <div class="text-xs font-mono text-slate-500">Email</div>
+                    <div class="text-sm text-slate-200 break-all">barasaderrick499@gmail.com</div>
+                </a>
+                <a href="tel:+254793539606" class="bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 rounded-xl p-5 transition-all">
+                    <i class="fa-solid fa-phone text-brand-500 text-xl mb-3"></i>
+                    <div class="text-xs font-mono text-slate-500">Phone</div>
+                    <div class="text-sm text-slate-200">+254 793539606</div>
+                </a>
+                <a href="https://wa.me/254793539606" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 rounded-xl p-5 transition-all">
+                    <i class="fa-brands fa-whatsapp text-brand-500 text-xl mb-3"></i>
+                    <div class="text-xs font-mono text-slate-500">WhatsApp</div>
+                    <div class="text-sm text-slate-200">Chat with me</div>
+                </a>
+            </div>
+
+            <form id="contact-form" class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 text-left space-y-4 mb-8">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="cf-name" class="block text-xs font-mono text-slate-500 mb-1">Name</label>
+                        <input id="cf-name" required type="text" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+                    </div>
+                    <div>
+                        <label for="cf-email" class="block text-xs font-mono text-slate-500 mb-1">Your email</label>
+                        <input id="cf-email" required type="email" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="cf-msg" class="block text-xs font-mono text-slate-500 mb-1">Message</label>
+                    <textarea id="cf-msg" required rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+                <button type="submit" class="w-full px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all">
+                    Send Message
+                </button>
+                <p class="text-xs text-slate-500 text-center">Opens your email app with the message ready to send.</p>
+            </form>
+
+            <div class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-slate-400 font-mono text-sm">
+                <a href="https://github.com/derrickbarasa" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">GitHub</a>
+                <span>&bull;</span>
+                <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">LinkedIn</a>
+                <span>&bull;</span>
+                <span class="text-slate-500">Nairobi, Kenya</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-slate-900 text-center text-xs font-mono text-slate-500">
+        <p>Designed & Built by Derrick Barasa &copy; 2026</p>
+    </footer>
+
+    <button id="to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-brand-500 text-slate-950 shadow-lg opacity-0 pointer-events-none transition-opacity">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        function setMenu(open) {
+            menu.classList.toggle('hidden', !open);
+            menuBtn.setAttribute('aria-expanded', open);
+            menuBtn.innerHTML = '<i class="fa-solid ' + (open ? 'fa-xmark' : 'fa-bars') + ' text-xl"></i>';
+        }
+        menuBtn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+        // Contact form -> mailto
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('cf-name').value.trim();
+            const email = document.getElementById('cf-email').value.trim();
+            const msg = document.getElementById('cf-msg').value.trim();
+            const body = msg + '\n\n- ' + name + ' (' + email + ')';
+            window.location.href = 'mailto:barasaderrick499@gmail.com?subject=' +
+                encodeURIComponent('Portfolio inquiry from ' + name) + '&body=' + encodeURIComponent(body);
+        });
+
+        // Reveal on scroll (content stays visible if IntersectionObserver is unavailable)
+        if ('IntersectionObserver' in window) {
+            const targets = document.querySelectorAll('section > div');
+            targets.forEach(t => t.classList.add('reveal'));
+            const io = new IntersectionObserver(entries => entries.forEach(en => {
+                if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+            }), { threshold: 0.05 });
+            targets.forEach(t => io.observe(t));
+
+            // Active nav link
+            const links = document.querySelectorAll('nav .nav-link');
+            const spy = new IntersectionObserver(entries => entries.forEach(en => {
+                if (en.isIntersecting) links.forEach(l =>
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+            }), { rootMargin: '-40% 0px -55% 0px' });
+            document.querySelectorAll('section[id]').forEach(sec => spy.observe(sec));
+        }
+
+        // Back to top
+        const toTop = document.getElementById('to-top');
+        window.addEventListener('scroll', () => {
+            const show = window.scrollY > 600;
+            toTop.style.opacity = show ? 1 : 0;
+            toTop.style.pointerEvents = show ? 'auto' : 'none';
+        }, { passive: true });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
