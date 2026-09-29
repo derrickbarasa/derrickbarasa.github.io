@@ -49,11 +49,13 @@
     <style>
         html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
         body { overflow-x: hidden; }
+        p, li { text-shadow: 0 1px 8px rgba(2,6,16,.45); }
         img { max-width: 100%; }
         h1, h2, h3, h4, h5, p, a { overflow-wrap: anywhere; }
         @media (max-width: 400px) { section { padding-left: 1rem !important; padding-right: 1rem !important; } }
         .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.visible { opacity: 1; transform: none; }
+        .hero-text { text-shadow: 0 2px 18px rgba(2,6,16,.85), 0 1px 2px rgba(2,6,16,.6); }
         .nav-link.active { color: #d8d9de; }
         @media (prefers-reduced-motion: reduce) {
             .reveal { opacity: 1; transform: none; transition: none; }
@@ -77,7 +79,7 @@
                     colors: {
                         slate: {
                             50: '#f8f9fb', 100: '#eceef2', 200: '#dcdfe6', 300: '#c3c8d3',
-                            400: '#98a0b1', 500: '#6b7488', 600: '#4a5468',
+                            400: '#c3c8d3', 500: '#98a0b1', 600: '#4a5468',
                             700: '#2f3b52', 800: '#212b3f', 900: '#171f30', 950: '#111826'
                         },
                         brand: {
@@ -133,18 +135,18 @@
         <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none"></div>
 
 
-        <div class="max-w-4xl mx-auto text-left z-10">
+        <div class="max-w-4xl mx-auto text-left z-10 hero-text">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-brand-500 font-mono text-xs font-semibold mb-6">
                 <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Available for Engineering Roles
             </div>
-            <h1 class="text-3xl min-[400px]:text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4">
+            <h1 class="text-3xl min-[400px]:text-4xl sm:text-6xl font-extrabold text-white sm:text-[4rem] leading-tight tracking-tight mb-4">
                 Hi, I'm Derrick Barasa.
             </h1>
-            <h2 class="text-xl sm:text-4xl font-bold text-slate-400 mb-6">
+            <h2 class="text-xl sm:text-4xl font-bold text-slate-200 mb-6">
                 I build scalable web platforms, financial tools & enterprise systems.
             </h2>
-            <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl mb-8">
-                Software Engineering Student at <span class="text-slate-200 font-medium">The Co-operative University of Kenya</span>. Specialized in building event-driven architectures with Java Vert.x, robust web platforms with Laravel, reactive interfaces using Vue.js, and complex relational database systems.
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8">
+                Software Engineering Student at The Co-operative University of Kenya. Specialized in building event-driven architectures with Java Vert.x, robust web platforms with Laravel, reactive interfaces using Vue.js, and complex relational database systems.
             </p>
 
             <div class="flex flex-wrap items-center gap-3 sm:gap-4 font-medium text-sm">
