@@ -95,6 +95,54 @@
       "sameAs": ["https://github.com/derrickbarasa", "https://www.linkedin.com/in/derrick-barasa-1725b9353/"]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do we start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Send me a message with what you need, using the form or WhatsApp. I reply within 24 hours, and we set up a short call to understand the problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you charge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fixed price for projects with a defined scope, or hourly or monthly for ongoing work. I quote after the discovery call, so the price matches the scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with clients outside Kenya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I work remotely from Nairobi, on East Africa Time, with clients anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after the system goes live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the project. We agree what support you need before we start, whether that is a handover only or ongoing fixes and updates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you build something that is not on your list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The systems above are the ones I have built most, but I build custom software for any business. Tell me what you need and I will scope it."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="icon" type="image/png" href="logo-mark.png" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" href="logo-mark-dark.png" media="(prefers-color-scheme: light)">
     <style>
@@ -136,6 +184,13 @@
         .wa-float:focus-visible { outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px #128c4a; }
         .wa-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
         @media (min-width: 900px) { .wa-float:hover { padding: 0 1.25rem 0 1rem; } .wa-float:hover .wa-label, .wa-float:focus-visible .wa-label { position: static; width: auto; height: auto; overflow: visible; clip: auto; margin-left: .6rem; font-size: .85rem; font-weight: 600; font-family: 'Montserrat', 'Montserrat Fallback', system-ui, sans-serif; } }
+        .faq { border: 1px solid rgb(var(--slate-800)); border-radius: .75rem; background: rgb(var(--slate-900) / .6); }
+        .faq > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; padding: 1rem 1.25rem; font-weight: 600; color: rgb(var(--white)); }
+        .faq > summary::-webkit-details-marker { display: none; }
+        .faq > summary:hover { color: rgb(var(--brand-500)); }
+        .faq .faq-chev { flex: none; color: rgb(var(--brand-500)); transition: transform .2s; }
+        .faq[open] .faq-chev { transform: rotate(180deg); }
+        .faq > p { margin: 0; padding: 0 1.25rem 1.1rem; font-size: .9rem; line-height: 1.65; color: rgb(var(--slate-400)); }
         .demo-toggle { position: absolute; right: .5rem; bottom: .5rem; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 9999px; border: 1px solid rgb(255 255 255 / .25); background: rgb(17 24 38 / .72); color: #fff; cursor: pointer; opacity: .85; transition: opacity .2s; }
         .demo-toggle:hover, .demo-toggle:focus-visible { opacity: 1; }
         .demo-toggle .i-play, .demo-toggle[aria-pressed="true"] .i-pause { display: none; }
@@ -192,7 +247,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=27">
+    <link rel="stylesheet" href="css/style.css?v=28">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -966,10 +1021,83 @@
         </div>
     </section>
 
+    <!-- Working With Me Section -->
+    <section id="working" class="py-16 sm:py-20 border-t border-slate-900 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">07. Working With Me</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">What Working With Me Looks Like</h3>
+            <p class="text-slate-400 leading-relaxed mb-10 max-w-3xl">The same four steps on every project, from the first conversation to a system your team can run.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-500 text-2xl"><svg class="ic" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2 0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.3-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9l0 0 0 0-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"/></svg></span>
+                        <span class="font-mono text-xs text-slate-500">Step 1</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Discovery call and brief</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">We talk through the business problem, who will use the system and what done looks like, then agree the scope.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-500 text-2xl"><svg class="ic" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"/></svg></span>
+                        <span class="font-mono text-xs text-slate-500">Step 2</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Design and data model first</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Screens, user roles and the database are planned before any coding, so the system holds up as it grows.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-500 text-2xl"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M80 104a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm80-24c0 32.8-19.7 61-48 73.3v87.8c18.8-10.9 40.7-17.1 64-17.1h96c35.3 0 64-28.7 64-64v-6.7C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V160c0 70.7-57.3 128-128 128H176c-35.3 0-64 28.7-64 64v6.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V352 153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm232 0a24 24 0 1 0 -48 0 24 24 0 1 0 48 0zM80 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg></span>
+                        <span class="font-mono text-xs text-slate-500">Step 3</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Build in small stages</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">You see working versions early with demos along the way, and can change direction while it is cheap to do so.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-500 text-2xl"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg></span>
+                        <span class="font-mono text-xs text-slate-500">Step 4</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Test, deploy and hand over</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Testing, going live on your own domain, and a proper handover so you know how it works.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3 mb-12">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-300"><svg class="ic text-brand-500" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM80 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm54.2 253.8c-6.1 20.3-24.8 34.2-46 34.2H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h8.2c7.1 0 13.3-4.6 15.3-11.4l14.9-49.5c3.4-11.3 13.8-19.1 25.6-19.1s22.2 7.7 25.6 19.1l11.6 38.6c7.4-6.2 16.8-9.7 26.8-9.7c15.9 0 30.4 9 37.5 23.2l4.4 8.8H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-6.1 0-11.6-3.4-14.3-8.8l-8.8-17.7c-1.7-3.4-5.1-5.5-8.8-5.5s-7.2 2.1-8.8 5.5l-8.8 17.7c-2.9 5.9-9.2 9.4-15.7 8.8s-12.1-5.1-13.9-11.3L144 349l-9.8 32.8z"/></svg> Fixed-price projects</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-300"><svg class="ic text-brand-500" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg> Hourly or monthly</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-300"><svg class="ic text-brand-500" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg> Internships and junior roles</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-300"><svg class="ic text-brand-500" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M177.8 63.2l10 17.4c2.8 4.8 4.2 10.3 4.2 15.9v41.4c0 3.9 1.6 7.7 4.3 10.4c6.2 6.2 16.5 5.7 22-1.2l13.6-17c4.7-5.9 12.9-7.7 19.6-4.3l15.2 7.6c3.4 1.7 7.2 2.6 11 2.6c6.5 0 12.8-2.6 17.4-7.2l3.9-3.9c2.9-2.9 7.3-3.6 11-1.8l29.2 14.6c7.8 3.9 12.6 11.8 12.6 20.5c0 10.5-7.1 19.6-17.3 22.2l-35.4 8.8c-7.4 1.8-15.1 1.5-22.4-.9l-32-10.7c-3.3-1.1-6.7-1.7-10.2-1.7c-7 0-13.8 2.3-19.4 6.5L176 212c-10.1 7.6-16 19.4-16 32v28c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16v48c0 17.7 14.3 32 32 32c10.1 0 19.6-4.7 25.6-12.8l25.6-34.1c8.3-11.1 12.8-24.6 12.8-38.4V318.6c0-3.9 2.6-7.3 6.4-8.2l5.3-1.3c11.9-3 20.3-13.7 20.3-26c0-7.1-2.8-13.9-7.8-18.9l-33.5-33.5c-3.7-3.7-3.7-9.7 0-13.4c5.7-5.7 14.1-7.7 21.8-5.1l14.1 4.7c12.3 4.1 25.7-1.5 31.5-13c3.5-7 11.2-10.8 18.9-9.2l27.4 5.5C432 112.4 351.5 48 256 48c-27.7 0-54 5.4-78.2 15.2zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> Remote from Nairobi (EAT)</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-300"><svg class="ic text-brand-500" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/></svg> Replies within 24 hours</span>
+            </div>
+            <h4 class="text-lg font-mono font-bold text-brand-500 mb-4">Common questions</h4>
+            <div class="faq-list max-w-3xl space-y-3">
+                <details class="faq">
+                    <summary><span>How do we start?</span><svg class="ic faq-chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></summary>
+                    <p>Send me a message with what you need, using the form or WhatsApp. I reply within 24 hours, and we set up a short call to understand the problem.</p>
+                </details>
+                <details class="faq">
+                    <summary><span>How do you charge?</span><svg class="ic faq-chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></summary>
+                    <p>Fixed price for projects with a defined scope, or hourly or monthly for ongoing work. I quote after the discovery call, so the price matches the scope.</p>
+                </details>
+                <details class="faq">
+                    <summary><span>Do you work with clients outside Kenya?</span><svg class="ic faq-chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></summary>
+                    <p>Yes. I work remotely from Nairobi, on East Africa Time, with clients anywhere.</p>
+                </details>
+                <details class="faq">
+                    <summary><span>What happens after the system goes live?</span><svg class="ic faq-chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></summary>
+                    <p>It depends on the project. We agree what support you need before we start, whether that is a handover only or ongoing fixes and updates.</p>
+                </details>
+                <details class="faq">
+                    <summary><span>Can you build something that is not on your list?</span><svg class="ic faq-chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></summary>
+                    <p>Yes. The systems above are the ones I have built most, but I build custom software for any business. Tell me what you need and I will scope it.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 sm:py-20 bg-slate-900/30 border-t border-slate-900 px-4 sm:px-6 text-center contact-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">07. Next Steps</h2>
+            <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">08. Next Steps</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Connect</h3>
             <p class="text-slate-400 mb-8 leading-relaxed">
                 I am open to full-stack, backend and frontend roles, plus backend contracts and technical collaborations. Reach out to talk about system architecture or an opening on your team.
