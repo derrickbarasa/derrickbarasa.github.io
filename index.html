@@ -80,6 +80,17 @@
         .more-bar-title { font-weight: 700; font-size: 1.05rem; color: rgb(var(--white)); }
         .more-bar-sub { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace; font-size: .7rem; color: rgb(var(--slate-400)); }
         .more-bar-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: rgb(var(--brand-500)); color: rgb(var(--slate-950)); }
+        .cs-progress { height: 2px; margin-bottom: 1.5rem; overflow: hidden; border-radius: 2px; background: rgb(var(--slate-800)); }
+        .cs-progress span { display: block; width: 100%; height: 100%; background: rgb(var(--brand-500)); transform: scaleX(0); transform-origin: left; }
+        .cs-progress span.run { animation: cs-fill 9s linear forwards; }
+        .cs-progress span.paused { animation-play-state: paused; }
+        @keyframes cs-fill { to { transform: scaleX(1); } }
+        .cs-pause { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; padding: .5rem 0; }
+        .cs-pause .i-play, .cs-pause[aria-pressed="true"] .i-pause { display: none; }
+        .cs-pause[aria-pressed="true"] .i-play { display: inline-block; }
+        .cs-stack { display: grid; }
+        .cs-stack > [role="tabpanel"] { grid-area: 1 / 1; transition: opacity .35s ease; }
+        .cs-stack > .cs-off { visibility: hidden; opacity: 0; pointer-events: none; }
         .cs-tab { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace; font-size: .75rem; font-weight: 600; padding: .5rem 1rem; border-radius: .5rem; border: 1px solid rgb(var(--slate-800)); color: rgb(var(--slate-300)); background: transparent; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
         .cs-tab:hover { border-color: rgb(var(--brand-500)); color: rgb(var(--white)); }
         .cs-tab[aria-selected="true"] { background: rgb(var(--brand-500)); border-color: rgb(var(--brand-500)); color: rgb(var(--slate-950)); }
@@ -104,12 +115,13 @@
         .tech-logo .ic { filter: grayscale(1) brightness(.55) contrast(1.2); transition: filter .3s, transform .3s; }
         .tech-logo:hover .ic { filter: none; transform: translateY(-3px); }
         @media (prefers-reduced-motion: reduce) {
+            .cs-stack > [role="tabpanel"] { transition: none; }
             .caret, .animate-bounce, .animate-pulse { animation: none !important; }
             .reveal { opacity: 1; transform: none; transition: none; }
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=12">
+    <link rel="stylesheet" href="css/style.css?v=13">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -746,8 +758,11 @@
                     <div id="cs-tabs" class="hidden flex-wrap gap-2" role="tablist" aria-label="Case studies">
                         <button type="button" role="tab" id="tab-cc" aria-controls="panel-cc" aria-selected="true" class="cs-tab">CountComply</button>
                         <button type="button" role="tab" id="tab-bio" aria-controls="panel-bio" aria-selected="false" tabindex="-1" class="cs-tab">BioPay</button>
+                        <button type="button" id="cs-pause" class="cs-tab cs-pause" aria-pressed="false" aria-label="Pause automatic rotation"><svg class="ic i-pause" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg><svg class="ic i-play" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></button>
                     </div>
                 </div>
+                <div id="cs-progress" class="cs-progress hidden" aria-hidden="true"><span id="cs-fill"></span></div>
+                <div id="cs-panels">
                 <div id="panel-cc" role="tabpanel" aria-labelledby="tab-cc">
                     <div class="flex flex-wrap items-center gap-3 mb-2">
                         <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Case study</span>
@@ -785,6 +800,7 @@
                         </figure>
                     </div>
                     <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand-500 hover:text-brand-600 font-mono text-xs transition-colors"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> See it live at biopay.africa</a>
+                </div>
                 </div>
             </div>
         </div>
@@ -992,32 +1008,66 @@
         }
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Case study tabs (both stay visible if JavaScript is off)
+        // Case study tabs: rotate automatically, pause on hover, focus, off-screen or by button; click to jump
         (function () {
-            const tabs = document.querySelectorAll('.cs-tab');
+            const box = document.getElementById('case-studies');
+            const tabs = Array.from(document.querySelectorAll('.cs-tab[role="tab"]'));
             const bar = document.getElementById('cs-tabs');
-            if (!tabs.length || !bar) return;
+            const panels = document.getElementById('cs-panels');
+            const fill = document.getElementById('cs-fill');
+            const track = document.getElementById('cs-progress');
+            const pauseBtn = document.getElementById('cs-pause');
+            if (!box || !tabs.length || !bar || !panels) return;
             bar.classList.remove('hidden'); bar.classList.add('flex');
-            function pick(tab) {
-                tabs.forEach(t => {
-                    const on = t === tab;
+            panels.classList.add('cs-stack');
+            let current = 0, userPaused = false, hover = false, focused = false, inView = false;
+            const auto = !calm;
+            if (auto) track.classList.remove('hidden'); else pauseBtn.classList.add('hidden');
+            function show(i) {
+                current = i;
+                tabs.forEach((t, k) => {
+                    const on = k === i;
                     t.setAttribute('aria-selected', on);
                     t.tabIndex = on ? 0 : -1;
                     const panel = document.getElementById(t.getAttribute('aria-controls'));
-                    panel.hidden = !on;
-                    panel.classList.toggle('mt-10', false); panel.classList.toggle('pt-10', false); panel.classList.toggle('border-t', false);
+                    panel.classList.remove('mt-10', 'pt-10', 'border-t');
+                    panel.classList.toggle('cs-off', !on);
+                    panel.setAttribute('aria-hidden', !on);
                 });
+                restart();
             }
-            tabs.forEach(t => {
-                t.addEventListener('click', () => pick(t));
+            function restart() {
+                if (!auto) return;
+                fill.classList.remove('run'); void fill.offsetWidth; fill.classList.add('run');
+                sync();
+            }
+            function sync() {
+                fill.classList.toggle('paused', userPaused || hover || focused || !inView || document.hidden);
+            }
+            fill.addEventListener('animationend', () => show((current + 1) % tabs.length));
+            tabs.forEach((t, k) => {
+                t.addEventListener('click', () => show(k));
                 t.addEventListener('keydown', e => {
                     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-                    const list = Array.from(tabs);
-                    const next = list[(list.indexOf(t) + (e.key === 'ArrowRight' ? 1 : list.length - 1)) % list.length];
-                    next.focus(); pick(next);
+                    const n = (k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+                    tabs[n].focus(); show(n);
                 });
             });
-            pick(tabs[0]);
+            pauseBtn.addEventListener('click', () => {
+                userPaused = !userPaused;
+                pauseBtn.setAttribute('aria-pressed', userPaused);
+                pauseBtn.setAttribute('aria-label', userPaused ? 'Resume automatic rotation' : 'Pause automatic rotation');
+                sync();
+            });
+            box.addEventListener('mouseenter', () => { hover = true; sync(); });
+            box.addEventListener('mouseleave', () => { hover = false; sync(); });
+            box.addEventListener('focusin', e => { focused = e.target.matches(':focus-visible'); sync(); });
+            box.addEventListener('focusout', () => { focused = false; sync(); });
+            document.addEventListener('visibilitychange', sync);
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(en => { inView = en[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(box);
+            } else { inView = true; }
+            show(0);
         })();
 
         // Back to top
