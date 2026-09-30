@@ -156,7 +156,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=22">
+    <link rel="stylesheet" href="css/style.css?v=23">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -1101,7 +1101,7 @@
 
         // Reveal on scroll (content stays visible if IntersectionObserver is unavailable)
         if ('IntersectionObserver' in window) {
-            const targets = document.querySelectorAll('section > div');
+            const targets = document.querySelectorAll('section:not(.min-h-screen) > div');
             targets.forEach(t => t.classList.add('reveal'));
             const io = new IntersectionObserver(entries => entries.forEach(en => {
                 if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
