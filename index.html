@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93YCTERR36"></script>
+    <!-- Google tag (gtag.js), loaded after the page so it does not slow the first paint -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-93YCTERR36');
+        window.addEventListener('load', function () {
+            var load = function () {
+                var g = document.createElement('script');
+                g.async = true;
+                g.src = 'https://www.googletagmanager.com/gtag/js?id=G-93YCTERR36';
+                document.head.appendChild(g);
+            };
+            if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 4000 }); else setTimeout(load, 2000);
+        });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -137,7 +144,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
