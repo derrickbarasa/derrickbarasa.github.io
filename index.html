@@ -121,7 +121,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=13">
+    <link rel="stylesheet" href="css/style.css?v=14">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -755,9 +755,11 @@
             <div id="case-studies" class="band-navy border border-slate-800 rounded-xl p-5 sm:p-8">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
                     <h4 class="text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase">Case studies</h4>
-                    <div id="cs-tabs" class="hidden flex-wrap gap-2" role="tablist" aria-label="Case studies">
+                    <div id="cs-controls" class="hidden items-center gap-2">
+                        <div id="cs-tabs" class="flex flex-wrap gap-2" role="tablist" aria-label="Case studies">
                         <button type="button" role="tab" id="tab-cc" aria-controls="panel-cc" aria-selected="true" class="cs-tab">CountComply</button>
                         <button type="button" role="tab" id="tab-bio" aria-controls="panel-bio" aria-selected="false" tabindex="-1" class="cs-tab">BioPay</button>
+                        </div>
                         <button type="button" id="cs-pause" class="cs-tab cs-pause" aria-pressed="false" aria-label="Pause automatic rotation"><svg class="ic i-pause" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg><svg class="ic i-play" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></button>
                     </div>
                 </div>
@@ -1012,7 +1014,7 @@
         (function () {
             const box = document.getElementById('case-studies');
             const tabs = Array.from(document.querySelectorAll('.cs-tab[role="tab"]'));
-            const bar = document.getElementById('cs-tabs');
+            const bar = document.getElementById('cs-controls');
             const panels = document.getElementById('cs-panels');
             const fill = document.getElementById('cs-fill');
             const track = document.getElementById('cs-progress');
