@@ -16,14 +16,14 @@
     <meta property="og:url" content="https://derrickbarasa.github.io/">
     <meta property="og:title" content="Derrick Barasa | Software Engineer Portfolio">
     <meta property="og:description" content="Scalable web platforms, financial tools & enterprise systems built with Java Vert.x, Laravel, Vue.js, Flutter and Kotlin. Full-stack, backend and frontend developer.">
-    <meta property="og:image" content="https://derrickbarasa.github.io/logo.jpg">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="559">
-    <meta property="og:image:alt" content="Derrick Barasa DB logo">
+    <meta property="og:image" content="https://derrickbarasa.github.io/img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Derrick Barasa, Software Engineer, with a laptop showing code on a desk">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Derrick Barasa | Software Engineer Portfolio">
     <meta name="twitter:description" content="Scalable web platforms, financial tools & enterprise systems built with Java Vert.x, Laravel, Vue.js, Flutter and Kotlin. Full-stack, backend and frontend developer.">
-    <meta name="twitter:image" content="https://derrickbarasa.github.io/logo.jpg">
+    <meta name="twitter:image" content="https://derrickbarasa.github.io/img/og.jpg">
     <link rel="apple-touch-icon" href="logo-mark.png">
     <script type="application/ld+json">
     {
@@ -74,6 +74,12 @@
         .flow-node .ic { font-size: 1.5rem; color: rgb(var(--brand-500)); }
         .flow-link { flex: 0 0 1.5rem; height: 2px; position: relative; overflow: hidden; background: rgb(var(--slate-800)); }
         .flow-link::after { content: ""; position: absolute; top: 0; left: -40%; width: 40%; height: 100%; background: rgb(var(--brand-500)); animation: flow 1.6s linear infinite; }
+        .more-projects > summary { list-style: none; }
+        .more-projects > summary::-webkit-details-marker { display: none; }
+        .more-projects .when-open, .more-projects[open] .when-closed { display: none; }
+        .more-projects[open] .when-open { display: inline; }
+        .more-projects .chev { transition: transform .2s; }
+        .more-projects[open] .chev { transform: rotate(180deg); }
         .flow-sm .flow-row { gap: .3rem; }
         .flow-sm .flow-node { padding: .6rem .15rem; font-size: .58rem; gap: .35rem; }
         .flow-sm .flow-node .ic { font-size: 1.1rem; }
@@ -83,7 +89,7 @@
         .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
         @keyframes blink { 50% { opacity: 0; } }
         section[id] { content-visibility: auto; contain-intrinsic-size: auto 800px; }
-        #projects { contain-intrinsic-size: auto 3400px; }
+        #projects { contain-intrinsic-size: auto 2600px; }
         .ic { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; flex-shrink: 0; }
         .tech-logo .ic { filter: grayscale(1) brightness(.55) contrast(1.2); transition: filter .3s, transform .3s; }
         .tech-logo:hover .ic { filter: none; transform: translateY(-3px); }
@@ -93,7 +99,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=10">
+    <link rel="stylesheet" href="css/style.css?v=11">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -400,138 +406,13 @@
             <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">05. Featured Work</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">Live Web Platforms & Systems</h3>
 
-            <!-- Group 1: Live Domain Platforms -->
+            <!-- Featured -->
             <h4 class="text-lg font-mono font-bold text-brand-500 mb-6 flex items-center gap-2">
-                <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg> Live / Deployed Platforms
+                <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg> Featured Platforms
             </h4>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                
-                <!-- BioPay -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
-                    <div>
-                <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open BioPay" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
-                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/biopay.webp" alt="Screenshot of the BioPay website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
-                </a>
-                        <div class="flex justify-between items-start mb-4">
-                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">BioPay</h5>
-                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Biometrics</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            Offline-first biometric registration, payment and voucher infrastructure for humanitarian programmes.
-                        </p>
-                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> ONNX runtime & liveness detection</li>
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Low-latency biometric payload processing</li>
-                        </ul>
-                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> 4 modules: auth, registration, payments, vouchers</p>
-                    </div>
-                    <div>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Biometrics</span>
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java / Python</span>
-                        </div>
-                        <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
-                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> biopay.africa
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Derrick Gallery -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
-                    <div>
-                <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Derrick Gallery" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
-                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/automoti.webp" alt="Screenshot of the Derrick Gallery website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
-                </a>
-                        <div class="flex justify-between items-start mb-4">
-                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Derrick Gallery</h5>
-                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Web Platform</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            Vehicle listings platform for the Kenyan market, built with Laravel and Tailwind CSS and deployed with custom DNS.
-                        </p>
-                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Custom database migrations & REST routes</li>
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Hosted on Render with custom DNS mapping</li>
-                        </ul>
-                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> Scope: auth, listings, REST routes, migrations, live deploy</p>
-                    </div>
-                    <div>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Laravel</span>
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Tailwind CSS</span>
-                        </div>
-                        <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
-                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> automoti.site
-                        </a>
-                    </div>
-                </div>
-
-                <!-- RemitCore -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
-                    <div>
-                <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open RemitCore" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
-                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/remitcore.webp" alt="Screenshot of the RemitCore website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
-                </a>
-                        <div class="flex justify-between items-start mb-4">
-                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">RemitCore</h5>
-                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">FinTech</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            Public website for RemitCore, a money transfer and currency exchange platform. Built during my development internship on the RemitCore team.
-                        </p>
-                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Website design and development</li>
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Built as part of the RemitCore development team</li>
-                        </ul>
-                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> Scope: public website, design and development</p>
-                    </div>
-                    <div>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Website</span>
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Internship</span>
-                        </div>
-                        <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
-                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> remitcore.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Salaryd -->
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
-                    <div>
-                <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Salaryd" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
-                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/salaryd.webp" alt="Screenshot of the Salaryd website" width="640" height="360" loading="lazy" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
-                </a>
-                        <div class="flex justify-between items-start mb-4">
-                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Salaryd</h5>
-                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">HR Tech</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            HR and payroll platform bringing payroll, people, attendance and recruitment together for growing teams.
-                        </p>
-                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Payroll, tax deductions & attendance</li>
-                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Recruitment and employee records</li>
-                        </ul>
-                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> 5 modules: auth, payroll, attendance, recruitment, records</p>
-                    </div>
-                    <div>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java Vert.x</span>
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Vue.js</span>
-                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">PostgreSQL</span>
-                        </div>
-                        <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
-                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> salaryd.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- CountComply -->
+<!-- CountComply -->
                 <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
                     <div>
                 <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open CountComply" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
@@ -563,6 +444,69 @@
                     </div>
                 </div>
 
+<!-- BioPay -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
+                    <div>
+                <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open BioPay" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
+                    <img src="img/biopay.webp" alt="Screenshot of the BioPay website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                </a>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">BioPay</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Biometrics</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Offline-first biometric registration, payment and voucher infrastructure for humanitarian programmes.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> ONNX runtime & liveness detection</li>
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Low-latency biometric payload processing</li>
+                        </ul>
+                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> 4 modules: auth, registration, payments, vouchers</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Biometrics</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java / Python</span>
+                        </div>
+                        <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> biopay.africa
+                        </a>
+                    </div>
+                </div>
+
+<!-- Salaryd -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
+                    <div>
+                <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Salaryd" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
+                    <img src="img/salaryd.webp" alt="Screenshot of the Salaryd website" width="640" height="360" loading="lazy" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                </a>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Salaryd</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">HR Tech</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            HR and payroll platform bringing payroll, people, attendance and recruitment together for growing teams.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Payroll, tax deductions & attendance</li>
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Recruitment and employee records</li>
+                        </ul>
+                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> 5 modules: auth, payroll, attendance, recruitment, records</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java Vert.x</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Vue.js</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">PostgreSQL</span>
+                        </div>
+                        <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> salaryd.com
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Case study -->
@@ -585,6 +529,101 @@
                 </div>
                 <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand-500 hover:text-brand-600 font-mono text-xs transition-colors"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> See it live at countcomply.com</a>
             </div>
+
+            <!-- Case study: BioPay -->
+            <div class="mb-12 bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-8">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Case study</span>
+                    <span class="text-xs font-mono text-slate-500">BioPay &middot; Humanitarian payments</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold text-white mb-6">Inside BioPay: identity you can pay against</h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-5 text-sm text-slate-400 leading-relaxed">
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">Problem</div>Humanitarian programmes need to register people, confirm each person is who they say they are, and then pay them or issue vouchers, often where the internet is unreliable.</div>
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">Approach</div>An offline-first platform for biometric registration, payments and vouchers. Liveness detection runs on the ONNX runtime, and biometric payloads are processed with low latency so a registration or payment does not keep people waiting.</div>
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">My role</div>Development and production deployment on a custom domain (biopay.africa), using Java and Python.</div>
+                    </div>
+                    <figure class="flow" aria-label="Simplified flow: capture offline, check liveness, register, then pay or issue a voucher">
+                        <div class="flow-row"><div class="flow-node"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 256C48 141.1 141.1 48 256 48c63.1 0 119.6 28.1 157.8 72.5c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8C403.3 34.6 333.7 0 256 0C114.6 0 0 114.6 0 256v40c0 13.3 10.7 24 24 24s24-10.7 24-24V256zm458.5-52.9c-2.7-13-15.5-21.3-28.4-18.5s-21.3 15.5-18.5 28.4c2.9 13.9 4.5 28.3 4.5 43.1v40c0 13.3 10.7 24 24 24s24-10.7 24-24V256c0-18.1-1.9-35.8-5.5-52.9zM256 80c-19 0-37.4 3-54.5 8.6c-15.2 5-18.7 23.7-8.3 35.9c7.1 8.3 18.8 10.8 29.4 7.9c10.6-2.9 21.8-4.4 33.4-4.4c70.7 0 128 57.3 128 128v24.9c0 25.2-1.5 50.3-4.4 75.3c-1.7 14.6 9.4 27.8 24.2 27.8c11.8 0 21.9-8.6 23.3-20.3c3.3-27.4 5-55 5-82.7V256c0-97.2-78.8-176-176-176zM150.7 148.7c-9.1-10.6-25.3-11.4-33.9-.4C93.7 178 80 215.4 80 256v24.9c0 24.2-2.6 48.4-7.8 71.9C68.8 368.4 80.1 384 96.1 384c10.5 0 19.9-7 22.2-17.3c6.4-28.1 9.7-56.8 9.7-85.8V256c0-27.2 8.5-52.4 22.9-73.1c7.2-10.4 8-24.6-.2-34.2zM256 160c-53 0-96 43-96 96v24.9c0 35.9-4.6 71.5-13.8 106.1c-3.8 14.3 6.7 29 21.5 29c9.5 0 17.9-6.2 20.4-15.4c10.5-39 15.9-79.2 15.9-119.7V256c0-28.7 23.3-52 52-52s52 23.3 52 52v24.9c0 36.3-3.5 72.4-10.4 107.9c-2.7 13.9 7.7 27.2 21.8 27.2c10.2 0 19-7 21-17c7.7-38.8 11.6-78.3 11.6-118.1V256c0-53-43-96-96-96zm24 96c0-13.3-10.7-24-24-24s-24 10.7-24 24v24.9c0 59.9-11 119.3-32.5 175.2l-5.9 15.3c-4.8 12.4 1.4 26.3 13.8 31s26.3-1.4 31-13.8l5.9-15.3C267.9 411.9 280 346.7 280 280.9V256z"/></svg><span>Capture</span></div><div class="flow-link" aria-hidden="true"></div><div class="flow-node"><svg class="ic" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg><span>Liveness</span></div><div class="flow-link" aria-hidden="true"></div><div class="flow-node"><svg class="ic" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z"/></svg><span>Register</span></div><div class="flow-link" aria-hidden="true"></div><div class="flow-node"><svg class="ic" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M64 64C28.7 64 0 92.7 0 128v64c0 8.8 7.4 15.7 15.7 18.6C34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320v64c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V320c0-8.8-7.4-15.7-15.7-18.6C541.5 294.9 528 277 528 256s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6V128c0-35.3-28.7-64-64-64H64zm64 112l0 160c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16zM96 160c0-17.7 14.3-32 32-32H448c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V160z"/></svg><span>Pay / voucher</span></div></div>
+                        <figcaption class="text-xs font-mono text-slate-500 mt-3 text-center">From offline capture to a verified payment</figcaption>
+                    </figure>
+                </div>
+                <a href="https://biopay.africa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand-500 hover:text-brand-600 font-mono text-xs transition-colors"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> See it live at biopay.africa</a>
+            </div>
+
+            <details class="more-projects">
+                <summary class="inline-flex items-center gap-2 cursor-pointer px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium text-sm transition-all mb-8">
+                    <span class="when-closed">Show all other projects</span><span class="when-open">Show fewer projects</span>
+                    <svg class="ic chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                </summary>
+                <h4 class="text-lg font-mono font-bold text-brand-500 mb-6 flex items-center gap-2">
+                    <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg> More Live Platforms
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+<!-- Derrick Gallery -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
+                    <div>
+                <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Derrick Gallery" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
+                    <img src="img/automoti.webp" alt="Screenshot of the Derrick Gallery website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                </a>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Derrick Gallery</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Web Platform</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Vehicle listings platform for the Kenyan market, built with Laravel and Tailwind CSS and deployed with custom DNS.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Custom database migrations & REST routes</li>
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Hosted on Render with custom DNS mapping</li>
+                        </ul>
+                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> Scope: auth, listings, REST routes, migrations, live deploy</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Laravel</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Tailwind CSS</span>
+                        </div>
+                        <a href="https://automoti.site" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> automoti.site
+                        </a>
+                    </div>
+                </div>
+
+<!-- RemitCore -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 group">
+                    <div>
+                <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open RemitCore" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                    <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
+                    <img src="img/remitcore.webp" alt="Screenshot of the RemitCore website" width="640" height="360" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                </a>
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">RemitCore</h5>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">FinTech</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Public website for RemitCore, a money transfer and currency exchange platform. Built during my development internship on the RemitCore team.
+                        </p>
+                        <ul class="text-xs text-slate-400 space-y-2 mb-6 font-mono">
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Website design and development</li>
+                            <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> Built as part of the RemitCore development team</li>
+                        </ul>
+                        <p class="text-xs font-mono text-slate-500 mb-6 -mt-3 flex items-start gap-2"><svg class="ic text-brand-500 mt-0.5" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"/></svg> Scope: public website, design and development</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Website</span>
+                            <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Internship</span>
+                        </div>
+                        <a href="https://remitcore.com" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 font-mono text-xs flex items-center gap-2 transition-colors">
+                            <svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> remitcore.com
+                        </a>
+                    </div>
+                </div>
+
+                </div>
 
             <!-- Group 2: Enterprise Systems -->
             <h4 class="text-lg font-mono font-bold text-brand-500 mb-6 flex items-center gap-2">
@@ -724,6 +763,7 @@
                     <a href="https://github.com/derrickbarasa/avatar" target="_blank" rel="noopener noreferrer" aria-label="Avatar Maker source on GitHub" class="text-brand-500 hover:text-brand-600 font-mono text-[11px] flex items-center gap-1.5 transition-colors"><svg class="ic" viewBox="0 0 496 512" fill="currentColor" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> Source on GitHub</a>
                 </div>
             </div>
+            </details>
         </div>
     </section>
 
