@@ -8,7 +8,6 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#f4f6fa">
     <meta name="author" content="Derrick Barasa">
-    <meta name="keywords" content="Derrick Barasa, software engineer, Kenya, Nairobi, Java Vert.x, Laravel, Vue.js, PostgreSQL, fintech, full-stack developer, portfolio">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://derrickbarasa.github.io/">
     <meta property="og:site_name" content="Derrick Barasa">
@@ -60,7 +59,7 @@
         @media (max-width: 400px) { section { padding-left: 1rem !important; padding-right: 1rem !important; } }
         .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.visible { opacity: 1; transform: none; }
-        .hero-text a, .hero-text .badge, button, input, textarea { text-shadow: none !important; }
+        .hero-text a, button, input, textarea { text-shadow: none !important; }
         .hero-text { text-shadow: var(--ts-hero); }
         .nav-link.active { color: rgb(var(--brand-500)); }
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid rgb(var(--brand-500)); outline-offset: 3px; border-radius: 6px; }
@@ -86,13 +85,11 @@
         .tech-logo:hover .ic { filter: none; transform: translateY(-3px); }
         @media (prefers-reduced-motion: reduce) {
             .caret, .animate-bounce, .animate-pulse { animation: none !important; }
-        }
-        @media (prefers-reduced-motion: reduce) {
             .reveal { opacity: 1; transform: none; transition: none; }
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=8">
+    <link rel="stylesheet" href="css/style.css?v=9">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -565,7 +562,7 @@
             </div>
 
             <!-- Case study -->
-            <div id="case-study" class="band-navy mb-12 border border-slate-800 rounded-xl p-5 sm:p-8">
+            <div class="band-navy mb-12 border border-slate-800 rounded-xl p-5 sm:p-8">
                 <div class="flex flex-wrap items-center gap-3 mb-2">
                     <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Case study</span>
                     <span class="text-xs font-mono text-slate-500">CountComply &middot; RemitCore internship, 2026</span>

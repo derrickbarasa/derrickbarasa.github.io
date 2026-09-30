@@ -9,22 +9,22 @@
   :root {
     color-scheme: light;
     --white: 15 23 42;
-    --slate-50: 11 17 30;     --slate-100: 17 24 38;    --slate-200: 30 41 59;
+    --slate-100: 17 24 38;    --slate-200: 30 41 59;
     --slate-300: 45 55 76;    --slate-400: 63 74 96;    --slate-500: 90 102 125;
-    --slate-600: 132 143 163; --slate-700: 200 208 222; --slate-800: 219 225 236;
+    --slate-700: 200 208 222; --slate-800: 219 225 236;
     --slate-900: 255 255 255; --slate-950: 244 246 250;
-    --brand-50: 224 247 243;  --brand-500: 15 118 110;  --brand-600: 17 94 89;    --brand-900: 190 234 227;
+    --brand-500: 15 118 110;  --brand-600: 17 94 89;
     --ts-soft: none;
     --ts-hero: none;
   }
   .band-navy {
     color-scheme: dark;
     --white: 255 255 255;
-    --slate-50: 248 249 251;  --slate-100: 236 238 242; --slate-200: 220 223 230;
+    --slate-100: 236 238 242; --slate-200: 220 223 230;
     --slate-300: 195 200 211; --slate-400: 195 200 211; --slate-500: 152 160 177;
-    --slate-600: 74 84 104;   --slate-700: 47 59 82;    --slate-800: 33 43 63;
+    --slate-700: 47 59 82;    --slate-800: 33 43 63;
     --slate-900: 23 31 48;    --slate-950: 17 24 38;
-    --brand-50: 240 253 250;  --brand-500: 45 212 191;  --brand-600: 20 184 166;  --brand-900: 19 78 74;
+    --brand-500: 45 212 191;  --brand-600: 20 184 166;
     --ts-soft: 0 1px 8px rgb(2 6 16 / .45);
     --ts-hero: 0 2px 18px rgb(2 6 16 / .85), 0 1px 2px rgb(2 6 16 / .6);
     background-color: rgb(var(--slate-950));
