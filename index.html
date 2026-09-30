@@ -6,15 +6,7 @@
     <title>Derrick Barasa | Software Engineer Portfolio</title>
     <meta name="description" content="Derrick Barasa - Software Engineering student at The Co-operative University of Kenya. Full-stack, backend and frontend developer with a 2025-2026 development internship at RemitCore. Building scalable web platforms, fintech tools and enterprise systems with Java Vert.x, Laravel, Vue.js, Flutter and Kotlin.">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="theme-color" content="#111826">
-    <script>
-        (function () {
-            var t = 'dark';
-            try { var saved = localStorage.getItem('theme'); if (saved === 'light' || saved === 'dark') t = saved; } catch (e) {}
-            document.documentElement.setAttribute('data-theme', t);
-            if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f6fa');
-        })();
-    </script>
+    <meta name="theme-color" content="#f4f6fa">
     <meta name="author" content="Derrick Barasa">
     <meta name="keywords" content="Derrick Barasa, software engineer, Kenya, Nairobi, Java Vert.x, Laravel, Vue.js, PostgreSQL, fintech, full-stack developer, portfolio">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -73,13 +65,6 @@
         .section-label { display: flex; align-items: center; gap: .75rem; }
         .section-label::before { content: ""; width: 2rem; height: 2px; background: linear-gradient(90deg, rgb(var(--brand-500)), transparent); }
         .contact-center .section-label { justify-content: center; }
-        [data-theme="light"] .only-dark { display: none !important; }
-        :root:not([data-theme="light"]) .only-light { display: none !important; }
-        [data-theme="light"] .i-sun { display: none; }
-        :root:not([data-theme="light"]) .i-moon { display: none; }
-        .theme-anim, .theme-anim * { transition: background-color .3s ease, color .3s ease, border-color .3s ease !important; }
-        [data-theme="light"] .hero-overlay { background-image: linear-gradient(to right, rgb(var(--slate-950) / .82), rgb(var(--slate-950) / .5) 45%, rgb(var(--slate-950) / .05)); }
-        @media (min-width: 640px) { [data-theme="light"] .hero-overlay { background-image: linear-gradient(to right, rgb(var(--slate-950) / .68), rgb(var(--slate-950) / .22) 50%, transparent); } }
         .flow { display: flex; flex-direction: column; justify-content: center; }
         .flow-row { display: flex; align-items: center; gap: .5rem; }
         .flow-node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .9rem .4rem; border: 1px solid rgb(var(--slate-800)); border-radius: .75rem; background: rgb(var(--slate-950) / .5); font-family: 'JetBrains Mono', monospace; font-size: .7rem; text-align: center; color: rgb(var(--slate-200)); }
@@ -90,9 +75,8 @@
         @media (prefers-reduced-motion: reduce) { .flow-link::after { animation: none; left: 0; width: 100%; } }
         .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
         @keyframes blink { 50% { opacity: 0; } }
-        .tech-logo i { filter: grayscale(1) brightness(1.15); transition: filter .3s, transform .3s; }
-        [data-theme="light"] .tech-logo i { filter: grayscale(1) brightness(.55) contrast(1.2); }
-        .tech-logo:hover i, [data-theme="light"] .tech-logo:hover i { filter: none; transform: translateY(-3px); }
+        .tech-logo i { filter: grayscale(1) brightness(.55) contrast(1.2); transition: filter .3s, transform .3s; }
+        .tech-logo:hover i { filter: none; transform: translateY(-3px); }
         @media (prefers-reduced-motion: reduce) {
             .caret, .animate-bounce, .animate-pulse { animation: none !important; }
         }
@@ -101,14 +85,22 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+    </noscript>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -117,7 +109,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                <img src="logo-mark.png" alt="DB logo" class="only-dark h-8 sm:h-9 w-auto"><img src="logo-mark-dark.png" alt="" aria-hidden="true" class="only-light h-8 sm:h-9 w-auto"><span class="hidden sm:inline text-sm font-semibold tracking-[0.2em] uppercase">Derrick Barasa</span>
+                <img src="logo-mark-dark.png" alt="DB logo" width="305" height="235" class="h-8 sm:h-9 w-auto"><span class="hidden sm:inline text-sm font-semibold tracking-[0.2em] uppercase">Derrick Barasa</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
                 <a href="#about" class="nav-link hover:text-brand-500 transition-colors">About</a>
@@ -134,9 +126,6 @@
                 <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-white transition-colors">
                     <i class="fa-brands fa-linkedin text-xl"></i>
                 </a>
-                <button id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" class="text-slate-400 hover:text-white transition-colors w-6 text-center">
-                    <i class="fa-solid fa-sun i-sun text-xl"></i><i class="fa-solid fa-moon i-moon text-xl"></i>
-                </button>
                 <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-slate-300 hover:text-white">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
@@ -154,10 +143,9 @@
 
     <main id="main">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
-        <img src="img/hero-bg.jpg" alt="" aria-hidden="true" width="1920" height="1078" fetchpriority="high" class="only-dark absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-80 pointer-events-none select-none">
-        <img src="img/hero-bg-light.jpg" alt="" aria-hidden="true" width="1920" height="1078" loading="lazy" class="only-light absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center pointer-events-none select-none">
-        <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-slate-950/25 sm:from-slate-950/75 sm:via-slate-950/30 sm:to-transparent pointer-events-none"></div>
+    <section class="band-navy min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
+        <img src="img/hero.webp" srcset="img/hero-sm.webp 900w, img/hero.webp 1671w" sizes="100vw" alt="" aria-hidden="true" width="1671" height="941" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[78%_center] sm:object-center pointer-events-none select-none">
+        <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-slate-950/25 sm:from-slate-950/90 sm:via-slate-950/60 sm:to-slate-950/5 pointer-events-none"></div>
         <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none"></div>
 
 
@@ -199,7 +187,7 @@
     </section>
 
     <!-- Numbers strip -->
-    <section aria-label="At a glance" class="border-t border-slate-900 bg-slate-900/40 px-4 sm:px-6 py-8">
+    <section aria-label="At a glance" class="band-navy px-4 sm:px-6 py-8">
         <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="8">8</span></div><div class="text-xs font-mono text-slate-400 mt-1">Systems designed & built</div></div>
             <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="5">5</span></div><div class="text-xs font-mono text-slate-400 mt-1">Live on custom domains</div></div>
@@ -564,7 +552,7 @@
             </div>
 
             <!-- Case study -->
-            <div id="case-study" class="mb-12 bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-8">
+            <div id="case-study" class="band-navy mb-12 border border-slate-800 rounded-xl p-5 sm:p-8">
                 <div class="flex flex-wrap items-center gap-3 mb-2">
                     <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Case study</span>
                     <span class="text-xs font-mono text-slate-500">CountComply &middot; RemitCore internship, 2026</span>
@@ -797,7 +785,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-6 border-t border-slate-900 text-center text-xs font-mono text-slate-500">
+    <footer class="band-navy py-6 text-center text-xs font-mono text-slate-500">
         <div class="flex justify-center gap-5 mb-3 text-base">
             <a href="https://github.com/derrickbarasa" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/derrick-barasa-1725b9353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
@@ -811,26 +799,6 @@
     </button>
 
     <script>
-        // Theme toggle (dark by default, choice remembered)
-        const themeBtn = document.getElementById('theme-toggle');
-        const themeMeta = document.querySelector('meta[name="theme-color"]');
-        function syncThemeUi() {
-            const light = document.documentElement.getAttribute('data-theme') === 'light';
-            themeBtn.setAttribute('aria-pressed', light);
-            themeBtn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
-            themeMeta.setAttribute('content', light ? '#f4f6fa' : '#111826');
-        }
-        syncThemeUi();
-        themeBtn.addEventListener('click', () => {
-            const root = document.documentElement;
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            root.classList.add('theme-anim');
-            root.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) {}
-            syncThemeUi();
-            setTimeout(() => root.classList.remove('theme-anim'), 400);
-        });
-
         // Make sure every image loads: retry a failed one a few times with a cache-buster
         function retryImage(img, attempt) {
             attempt = attempt || 0;
@@ -851,8 +819,6 @@
             });
         });
 
-        // Warm the cache with the light hero so the first switch is instant
-        window.addEventListener('load', () => setTimeout(() => { new Image().src = 'img/hero-bg-light.jpg'; }, 1200));
 
         // Mobile menu
         const menuBtn = document.getElementById('menu-btn');
