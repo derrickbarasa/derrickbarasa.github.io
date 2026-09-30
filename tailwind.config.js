@@ -4,7 +4,7 @@ module.exports = {
   content: ['./index.html'],
   theme: {
     extend: {
-      fontFamily: { sans: ['Montserrat', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'], mono: ['JetBrains Mono', 'ui-monospace', 'Consolas', 'monospace'] },
+      fontFamily: { sans: ['Montserrat', 'Montserrat Fallback', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'], mono: ['JetBrains Mono', 'JetBrains Mono Fallback', 'ui-monospace', 'Consolas', 'monospace'] },
       colors: {
         white: v('white'),
         slate: {
