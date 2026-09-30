@@ -179,6 +179,19 @@
         .more-bar-title { font-weight: 700; font-size: 1.05rem; color: rgb(var(--white)); }
         .more-bar-sub { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace; font-size: .7rem; color: rgb(var(--slate-400)); }
         .more-bar-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: rgb(var(--brand-500)); color: rgb(var(--slate-950)); }
+        .notes-open { display: inline-flex; align-items: center; gap: .5rem; align-self: flex-start; padding: .45rem .8rem; border: 1px solid rgb(var(--brand-500) / .45); border-radius: .5rem; background: rgb(var(--brand-500) / .06); color: rgb(var(--brand-500)); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace; font-size: .7rem; font-weight: 500; cursor: pointer; margin-bottom: 1rem; transition: border-color .2s, background-color .2s; }
+        .notes-open:hover { border-color: rgb(var(--brand-500)); background: rgb(var(--brand-500) / .12); }
+        .notes-dialog { width: min(36rem, calc(100vw - 2rem)); max-height: calc(100vh - 3rem); padding: 0; border: 1px solid rgb(var(--slate-800)); border-radius: 1rem; background: rgb(var(--slate-900)); color: rgb(var(--slate-300)); box-shadow: 0 24px 60px rgb(0 0 0 / .35); overflow: auto; }
+        .notes-dialog::backdrop { background: rgb(17 24 38 / .6); backdrop-filter: blur(2px); }
+        .notes-head { position: sticky; top: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem 1rem; background: rgb(var(--slate-900)); border-bottom: 1px solid rgb(var(--slate-800)); }
+        .notes-kicker { margin: 0 0 .25rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--brand-500)); }
+        .notes-head h2 { margin: 0; font-size: 1.25rem; font-weight: 700; color: rgb(var(--white)); }
+        .notes-close { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 9999px; border: 1px solid rgb(var(--slate-800)); background: transparent; color: rgb(var(--slate-300)); cursor: pointer; }
+        .notes-close:hover { border-color: rgb(var(--brand-500)); color: rgb(var(--brand-500)); }
+        .notes-body { padding: 1.1rem 1.5rem 1.5rem; }
+        .notes-body p { margin: 0 0 .8rem; font-size: .9rem; line-height: 1.7; color: rgb(var(--slate-400)); }
+        .notes-body h3 { margin: 1.1rem 0 .35rem; font-size: .95rem; font-weight: 700; color: rgb(var(--white)); }
+        .notes-body .notes-foot { margin-top: 1.1rem; padding-top: .9rem; border-top: 1px solid rgb(var(--slate-800)); font-size: .8rem; color: rgb(var(--slate-500)); }
         .wa-float { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 40; display: inline-flex; align-items: center; justify-content: center; height: 3.5rem; min-width: 3.5rem; padding: 0 1rem; border-radius: 9999px; background: #128c4a; color: #fff; font-size: 1.6rem; box-shadow: 0 6px 18px rgb(0 0 0 / .28); text-decoration: none; transition: background-color .2s, transform .2s; }
         .wa-float:hover { background: #0e7a40; transform: translateY(-2px); }
         .wa-float:focus-visible { outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px #128c4a; }
@@ -247,7 +260,7 @@
             html { scroll-behavior: auto !important; }
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=29">
+    <link rel="stylesheet" href="css/style.css?v=30">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-sm.webp 900w, img/hero.webp 1671w" imagesizes="100vw" fetchpriority="high">
@@ -609,7 +622,8 @@
                     <div class="text-brand-500 text-2xl mb-4"><svg class="ic" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64H337.9c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5V384c0 35.3-28.7 64-64 64H302.1c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5V128c0-35.3 28.7-64 64-64zm64 64H96v64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64h64V320zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg></div>
                     <h4 class="text-lg font-bold text-white mb-2">Payment and mobile money integrations</h4>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4">Live M-PESA STK push payments through Safaricom Daraja, wallets and vouchers, wired into any order or billing system.</p>
-                    <p class="mt-auto text-xs font-mono text-slate-500">Example: Canteen System, BioPay</p>
+                    <p class="mt-auto mb-3 text-xs font-mono text-slate-500">Example: Canteen System, BioPay</p>
+                    <button type="button" class="notes-open" data-dialog="mpesa-notes"><svg class="ic" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64H337.9c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5V384c0 35.3-28.7 64-64 64H302.1c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5V128c0-35.3 28.7-64 64-64zm64 64H96v64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64h64V320zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg> How the canteen payments work <svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 hover:border-slate-700 transition-colors flex flex-col">
                     <div class="text-brand-500 text-2xl mb-4"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></svg></div>
@@ -894,6 +908,7 @@
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">M-PESA</span>
                         </div>
+                        <button type="button" class="notes-open" data-dialog="mpesa-notes"><svg class="ic" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64H337.9c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5V384c0 35.3-28.7 64-64 64H302.1c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5V128c0-35.3 28.7-64 64-64zm64 64H96v64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64h64V320zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg> How the M-PESA payments work <svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
                         <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono"><span class="text-slate-500"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg> In production</span><span class="text-slate-500 flex items-center gap-1.5"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg> Private repo, code on request</span></div>
                     </div>
                 </div>
@@ -1219,6 +1234,28 @@
         </div>
     </div>
 
+    <dialog id="mpesa-notes" class="notes-dialog" aria-labelledby="mpesa-notes-title">
+        <div class="notes-head">
+            <div>
+                <p class="notes-kicker">Canteen System &middot; Technical note</p>
+                <h2 id="mpesa-notes-title">How the M-PESA payments work</h2>
+            </div>
+            <button type="button" class="notes-close" aria-label="Close"><svg class="ic" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+        </div>
+        <div class="notes-body">
+            <p>Some dishes must be paid for online first, so a customer who pays must get their food and a customer who does not pay must not. The payments are built on M-PESA STK push through Safaricom Daraja, in Java Vert.x and PostgreSQL.</p>
+            <h3>The flow</h3>
+            <p>The server checks the order is the customer's and the phone number is a valid Safaricom number. It saves the attempt as <em>initiated</em> with a unique reference, then asks Daraja to send the STK prompt to the phone. Only a confirmed result marks the payment captured.</p>
+            <h3>1. The callback is a hint, not proof</h3>
+            <p>Daraja's callback has no signature the server can verify, so anyone who found the address could fake a result. It is only used to look up the payment. The server then asks Daraja's authenticated status endpoint, and that answer decides. A forged callback cannot move money.</p>
+            <h3>2. Assume some callbacks never arrive</h3>
+            <p>A scheduler runs every 60 seconds and re-checks attempts that are still waiting. Attempts with no answer after 15 minutes are marked failed, so the customer can retry. "Still processing" counts as "ask again later", never as a failure.</p>
+            <h3>3. Every step is safe to repeat</h3>
+            <p>A unique reference stops a double-tap from charging twice. Capture only updates a payment that is still waiting, so when the callback, the status check and the scheduler all arrive together, exactly one of them wins.</p>
+            <p class="notes-foot">The code is in a private repository, and I am happy to walk through it.</p>
+        </div>
+    </dialog>
+
     <a id="wa-float" href="https://wa.me/254793539606?text=Hi%20Derrick%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener noreferrer" aria-label="Chat with Derrick on WhatsApp" class="wa-float"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><span class="wa-label">Chat on WhatsApp</span></a>
 
     <button id="to-top" type="button" aria-label="Back to top" class="fixed bottom-[6.25rem] right-[1.85rem] w-11 h-11 rounded-full bg-brand-500 text-slate-950 shadow-lg opacity-0 pointer-events-none transition-opacity">
@@ -1472,6 +1509,23 @@
                     if (userPaused) return;
                     if (en[0].isIntersecting) v.play().catch(() => {}); else v.pause();
                 }, { threshold: 0.5 }).observe(v);
+            });
+        })();
+
+        // Technical note dialogs
+        (function () {
+            const buttons = document.querySelectorAll('[data-dialog]');
+            if (!buttons.length || typeof HTMLDialogElement === 'undefined') return;
+            buttons.forEach(btn => btn.addEventListener('click', () => {
+                const dlg = document.getElementById(btn.dataset.dialog);
+                if (!dlg) return;
+                dlg._opener = btn;
+                dlg.showModal();
+            }));
+            document.querySelectorAll('dialog.notes-dialog').forEach(dlg => {
+                dlg.querySelector('.notes-close').addEventListener('click', () => dlg.close());
+                dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+                dlg.addEventListener('close', () => { if (dlg._opener) dlg._opener.focus(); });
             });
         })();
 
