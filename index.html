@@ -80,6 +80,14 @@
         .theme-anim, .theme-anim * { transition: background-color .3s ease, color .3s ease, border-color .3s ease !important; }
         [data-theme="light"] .hero-overlay { background-image: linear-gradient(to right, rgb(var(--slate-950) / .82), rgb(var(--slate-950) / .5) 45%, rgb(var(--slate-950) / .05)); }
         @media (min-width: 640px) { [data-theme="light"] .hero-overlay { background-image: linear-gradient(to right, rgb(var(--slate-950) / .68), rgb(var(--slate-950) / .22) 50%, transparent); } }
+        .flow { display: flex; flex-direction: column; justify-content: center; }
+        .flow-row { display: flex; align-items: center; gap: .5rem; }
+        .flow-node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .9rem .4rem; border: 1px solid rgb(var(--slate-800)); border-radius: .75rem; background: rgb(var(--slate-950) / .5); font-family: 'JetBrains Mono', monospace; font-size: .7rem; text-align: center; color: rgb(var(--slate-200)); }
+        .flow-node i { font-size: 1.5rem; color: rgb(var(--brand-500)); }
+        .flow-link { flex: 0 0 1.5rem; height: 2px; position: relative; overflow: hidden; background: rgb(var(--slate-800)); }
+        .flow-link::after { content: ""; position: absolute; top: 0; left: -40%; width: 40%; height: 100%; background: rgb(var(--brand-500)); animation: flow 1.6s linear infinite; }
+        @keyframes flow { to { left: 100%; } }
+        @media (prefers-reduced-motion: reduce) { .flow-link::after { animation: none; left: 0; width: 100%; } }
         .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
         @keyframes blink { 50% { opacity: 0; } }
         .tech-logo i { filter: grayscale(1) brightness(1.15); transition: filter .3s, transform .3s; }
@@ -167,7 +175,7 @@
                 <span class="text-slate-500">&gt;</span> <span id="typed">Java Vert.x</span><span class="caret" aria-hidden="true">|</span>
             </p>
             <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8">
-                Software Engineering Student at The Co-operative University of Kenya, with a 2025–2026 development internship at RemitCore. Specialized in event-driven architectures with Java Vert.x, robust web platforms with Laravel, reactive interfaces using Vue.js, mobile apps with Flutter and Kotlin, and complex relational database systems.
+                Software Engineering student at The Co-operative University of Kenya and former RemitCore development intern (2025&ndash;2026). I turn compliance, payments and payroll problems into reliable, event-driven systems with Java Vert.x, Laravel and Vue.js, and ship them live.
             </p>
 
             <div class="flex flex-wrap items-center gap-3 sm:gap-4 font-medium text-sm">
@@ -193,10 +201,10 @@
     <!-- Numbers strip -->
     <section aria-label="At a glance" class="border-t border-slate-900 bg-slate-900/40 px-4 sm:px-6 py-8">
         <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="8">8</span></div><div class="text-xs font-mono text-slate-400 mt-1">Projects built</div></div>
-            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="5">5</span></div><div class="text-xs font-mono text-slate-400 mt-1">Live sites</div></div>
-            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="2">2</span></div><div class="text-xs font-mono text-slate-400 mt-1">Backend stacks</div></div>
-            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="2">2</span></div><div class="text-xs font-mono text-slate-400 mt-1">Database engines</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="8">8</span></div><div class="text-xs font-mono text-slate-400 mt-1">Systems designed & built</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="5">5</span></div><div class="text-xs font-mono text-slate-400 mt-1">Live on custom domains</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="6">6</span></div><div class="text-xs font-mono text-slate-400 mt-1">Industries: fintech, compliance, HR, health, finance, ops</div></div>
+            <div><div class="text-3xl sm:text-4xl font-extrabold text-white"><span data-count="2">2</span></div><div class="text-xs font-mono text-slate-400 mt-1">Years on the RemitCore team</div></div>
         </div>
     </section>
 
@@ -487,7 +495,7 @@
                     <div>
                 <a href="https://salaryd.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open Salaryd" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
                     <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/salaryd.jpg" alt="Screenshot of the Salaryd website" width="800" height="450" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                    <img src="img/salaryd.jpg" alt="Screenshot of the Salaryd website" width="800" height="450" loading="lazy" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
                             <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">Salaryd</h5>
@@ -518,7 +526,7 @@
                     <div>
                 <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Open CountComply" class="relative block bg-slate-800 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
                     <span class="absolute top-2 right-2 z-10 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/80 border border-slate-700 text-[10px] font-mono font-semibold text-white"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Live</span>
-                    <img src="img/countcomply.jpg" alt="Screenshot of the CountComply website" width="800" height="450" loading="eager" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
+                    <img src="img/countcomply.jpg" alt="Screenshot of the CountComply website" width="800" height="450" loading="lazy" decoding="async" class="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500">
                 </a>
                         <div class="flex justify-between items-start mb-4">
                             <h5 class="text-xl font-bold text-white group-hover:text-brand-500 transition-colors">CountComply</h5>
@@ -544,6 +552,27 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Case study -->
+            <div id="case-study" class="mb-12 bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-8">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2.5 py-1 rounded border border-brand-500/20">Case study</span>
+                    <span class="text-xs font-mono text-slate-500">CountComply &middot; RemitCore internship, 2026</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold text-white mb-6">Inside CountComply: compliance in one place</h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-5 text-sm text-slate-400 leading-relaxed">
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">Problem</div>Compliance teams juggle screening, policies, risks, reminders and filings across spreadsheets and email, which makes deadlines easy to miss and audits painful.</div>
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">Approach</div>One platform for AI-assisted AML/KYC screening, policies, enterprise risks, obligations, filing tracking, board oversight and a full audit trail, on an event-driven Java Vert.x backend with a Vue.js interface and PostgreSQL.</div>
+                        <div><div class="text-xs font-mono text-brand-500 uppercase tracking-widest mb-1">My role</div>System development and system design, plus testing, as part of the RemitCore development team. Before that, I worked on the compliance and data analysis side in 2025 (Excel, Power BI, pandas), which shaped how I designed the product.</div>
+                    </div>
+                    <figure class="flow" aria-label="Simplified architecture: Vue.js interface, Vert.x event loop, PostgreSQL">
+                        <div class="flow-row"><div class="flow-node"><i class="fa-brands fa-vuejs"></i><span>Vue.js UI</span></div><div class="flow-link" aria-hidden="true"></div><div class="flow-node"><i class="fa-solid fa-bolt"></i><span>Vert.x event loop</span></div><div class="flow-link" aria-hidden="true"></div><div class="flow-node"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div></div>
+                        <figcaption class="text-xs font-mono text-slate-500 mt-3 text-center">Non-blocking requests from screen to database</figcaption>
+                    </figure>
+                </div>
+                <a href="https://www.countcomply.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand-500 hover:text-brand-600 font-mono text-xs transition-colors"><i class="fa-solid fa-arrow-up-right-from-square"></i> See it live at countcomply.com</a>
             </div>
 
             <!-- Group 2: Enterprise Systems -->
@@ -572,7 +601,7 @@
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vuetify</span>
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-shield-halved"></i> Healthcare Portal</span>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-lock"></i> Internal system &middot; demo on request</span>
                     </div>
                 </div>
 
@@ -596,7 +625,7 @@
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">MySQL</span>
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-calculator"></i> Enterprise Finance</span>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-lock"></i> Internal system &middot; demo on request</span>
                     </div>
                 </div>
 
@@ -620,7 +649,7 @@
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Vue.js</span>
                             <span class="text-[11px] font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">PostgreSQL</span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-utensils"></i> POS & Management</span>
+                        <span class="text-[11px] font-mono text-slate-500 block"><i class="fa-solid fa-lock"></i> Internal system &middot; demo on request</span>
                     </div>
                 </div>
 
@@ -634,7 +663,7 @@
             <h2 class="section-label text-xs font-mono font-semibold tracking-widest text-brand-500 uppercase mb-2">06. Next Steps</h2>
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Connect</h3>
             <p class="text-slate-400 mb-8 leading-relaxed">
-                I am actively seeking software engineering roles, backend contracts, and technical collaborations. Feel free to reach out to discuss system architecture or technical opportunities.
+                I am open to full-stack, backend and frontend roles, plus backend contracts and technical collaborations. Reach out to talk about system architecture or an opening on your team.
             </p>
             <div class="grid sm:grid-cols-3 gap-4 mb-8 text-left">
                 <a href="mailto:barasaderrick499@gmail.com" class="bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 rounded-xl p-5 transition-all">
