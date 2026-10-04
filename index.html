@@ -204,7 +204,9 @@
         .faq .faq-chev { flex: none; color: rgb(var(--brand-500)); transition: transform .2s; }
         .faq[open] .faq-chev { transform: rotate(180deg); }
         .faq > p { margin: 0; padding: 0 1.25rem 1.1rem; font-size: .9rem; line-height: 1.65; color: rgb(var(--slate-400)); }
-        .demo-toggle { position: absolute; right: .5rem; bottom: .5rem; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 9999px; border: 1px solid rgb(255 255 255 / .25); background: rgb(17 24 38 / .72); color: #fff; cursor: pointer; opacity: .85; transition: opacity .2s; }
+        .demo-toggle { position: absolute; right: .5rem; bottom: .5rem; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; height: 2rem; padding: 0 .75rem 0 .65rem; border-radius: 9999px; border: 1px solid rgb(255 255 255 / .25); background: rgb(17 24 38 / .8); color: #fff; cursor: pointer; opacity: .95; transition: opacity .2s; font-size: .75rem; font-weight: 600; line-height: 1; }
+        .demo-toggle::after { content: "Demo video"; }
+        .demo-toggle .ic { width: .75rem; height: .75rem; }
         .demo-toggle:hover, .demo-toggle:focus-visible { opacity: 1; }
         .demo-toggle .i-play, .demo-toggle[aria-pressed="true"] .i-pause { display: none; }
         .demo-toggle[aria-pressed="true"] .i-play { display: inline-block; }
