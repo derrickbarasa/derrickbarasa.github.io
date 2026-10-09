@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://derrickbarasa.github.io/sitemap.xml
+Sitemap: https://derrickbarasa.online/sitemap.xml
