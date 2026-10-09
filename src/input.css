@@ -2,31 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The introduction leads with the person and an actual piece of work. */
+.portfolio-intro { padding: 9rem 1.5rem 4.5rem; background: rgb(var(--slate-900)); }
+.intro-layout { max-width: 64rem; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center; }
+.intro-copy h1 { font-size: clamp(2.5rem, 4.7vw, 4rem); font-weight: 650; letter-spacing: -.035em; line-height: 1.12; color: rgb(var(--slate-100)); margin-bottom: 1.5rem; }
+.intro-role { font-size: 1.125rem; font-weight: 600; color: rgb(var(--slate-200)); margin-bottom: 1rem; }
+.intro-description { font-size: .9375rem; line-height: 1.85; color: rgb(var(--slate-400)); max-width: 54ch; }
+.intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; font-size: .875rem; font-weight: 600; }
+.intro-primary { display: inline-flex; align-items: center; gap: 1.25rem; padding: .875rem 1.25rem; background: rgb(var(--brand-500)); color: #fff; border-radius: .375rem; transition: background-color .2s; }
+.intro-primary:hover { background: rgb(var(--brand-600)); }
+.intro-secondary, .intro-availability a, .intro-work figcaption a { color: rgb(var(--brand-600)); text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.intro-secondary:hover, .intro-availability a:hover, .intro-work figcaption a:hover { text-decoration-thickness: 2px; }
+.intro-availability { margin-top: 1.75rem; font-size: .75rem; color: rgb(var(--slate-500)); line-height: 1.8; }
+.intro-work { min-width: 0; margin: 0; }
+.intro-work > a { display: block; border: 1px solid rgb(var(--slate-800)); border-radius: .5rem; overflow: hidden; }
+.intro-work img { display: block; width: 100%; height: auto; }
+.intro-work figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-top: 1rem; font-size: .75rem; line-height: 1.8; color: rgb(var(--slate-500)); }
+.intro-work figcaption strong { color: rgb(var(--slate-200)); font-weight: 600; font-size: .875rem; }
+.intro-work figcaption a { flex-shrink: 0; }
+.portfolio-facts { border-block: 1px solid rgb(var(--slate-800)); background: rgb(var(--slate-950)); }
+.portfolio-facts .font-mono { font-family: 'Montserrat', sans-serif; line-height: 1.65; }
+#projects .group:hover, #projects .group:hover img { transform: none; box-shadow: none; }
+#projects .font-mono, #about .font-mono { font-family: 'Montserrat', sans-serif; }
+.flow-link::after { animation: none; left: 0; width: 100%; }
+select:focus-visible { outline: 2px solid rgb(var(--brand-500)); outline-offset: 3px; }
+input, textarea, select { caret-color: rgb(var(--brand-500)); }
+input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacity: 1; }
+@media (max-width: 767px) {
+  .portfolio-intro { padding: 7rem 1.25rem 3rem; }
+  .intro-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .intro-copy h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .intro-work figcaption { flex-wrap: wrap; }
+}
+
 /* Theme tokens (space-separated RGB so Tailwind opacity modifiers work).
    The site is light. Add .band-navy to any element to flip everything inside
-   it to the navy palette (hero, stats strip, case study, footer). */
+   it to the charcoal palette (case study and footer). */
 @layer base {
   :root {
     color-scheme: light;
-    --white: 15 23 42;
-    --slate-100: 17 24 38;    --slate-200: 30 41 59;
-    --slate-300: 45 55 76;    --slate-400: 63 74 96;    --slate-500: 90 102 125;
-    --slate-700: 200 208 222; --slate-800: 219 225 236;
-    --slate-900: 255 255 255; --slate-950: 244 246 250;
-    --brand-500: 15 118 110;  --brand-600: 17 94 89;
+    --white: 32 40 34;
+    --slate-100: 32 40 34;    --slate-200: 45 54 48;
+    --slate-300: 59 69 62;    --slate-400: 75 85 78;    --slate-500: 90 101 93;
+    --slate-700: 197 205 198; --slate-800: 220 225 219;
+    --slate-900: 255 255 255; --slate-950: 247 248 246;
+    --brand-500: 54 88 73;   --brand-600: 40 66 55;
     --ts-soft: none;
     --ts-hero: none;
   }
   .band-navy {
     color-scheme: dark;
     --white: 255 255 255;
-    --slate-100: 236 238 242; --slate-200: 220 223 230;
-    --slate-300: 195 200 211; --slate-400: 195 200 211; --slate-500: 152 160 177;
-    --slate-700: 47 59 82;    --slate-800: 33 43 63;
-    --slate-900: 23 31 48;    --slate-950: 17 24 38;
-    --brand-500: 45 212 191;  --brand-600: 20 184 166;
-    --ts-soft: 0 1px 8px rgb(2 6 16 / .45);
-    --ts-hero: 0 2px 18px rgb(2 6 16 / .85), 0 1px 2px rgb(2 6 16 / .6);
+    --slate-100: 241 244 239; --slate-200: 227 233 225;
+    --slate-300: 209 219 207; --slate-400: 191 203 189; --slate-500: 166 181 164;
+    --slate-700: 78 93 82;    --slate-800: 61 75 65;
+    --slate-900: 42 53 46;    --slate-950: 32 40 34;
+    --brand-500: 183 203 189; --brand-600: 207 223 211;
+    --ts-soft: none;
+    --ts-hero: none;
     background-color: rgb(var(--slate-950));
     color: rgb(var(--slate-100));
   }
