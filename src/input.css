@@ -10,15 +10,10 @@ h1, h2, h3, h4, h5, p, a { overflow-wrap: anywhere; }
 @media (max-width: 400px) { section { padding-left: 1rem !important; padding-right: 1rem !important; } }
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-.hero-text a, button, input, textarea { text-shadow: none !important; }
-.hero-text { text-shadow: var(--ts-hero); }
 .nav-link.active { color: rgb(var(--brand-500)); }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid rgb(var(--brand-500)); outline-offset: 3px; border-radius: 6px; }
 .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: rgb(var(--brand-500)); color: rgb(var(--slate-950)); padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; transition: top .2s; text-shadow: none; }
 .skip-link:focus { top: 1rem; }
-.section-label { display: flex; align-items: center; gap: .75rem; }
-.section-label::before { content: ""; width: 2rem; height: 2px; background: linear-gradient(90deg, rgb(var(--brand-500)), transparent); }
-.contact-center .section-label { justify-content: center; }
 .flow { display: flex; flex-direction: column; justify-content: center; }
 .flow-row { display: flex; align-items: center; gap: .5rem; }
 .flow-node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .9rem .4rem; border: 1px solid rgb(var(--slate-800)); border-radius: .75rem; background: rgb(var(--slate-950) / .5); font-family: 'JetBrains Mono', monospace; font-size: .7rem; text-align: center; color: rgb(var(--slate-200)); }
@@ -100,8 +95,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .flow-sm .flow-link { flex-basis: .7rem; }
 @keyframes flow { to { left: 100%; } }
 @media (prefers-reduced-motion: reduce) { .flow-link::after { animation: none; left: 0; width: 100%; } }
-.caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
 section[id] { content-visibility: auto; contain-intrinsic-size: auto 800px; }
 #projects { contain-intrinsic-size: auto 2600px; }
 .ic { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; flex-shrink: 0; }
@@ -109,7 +102,6 @@ section[id] { content-visibility: auto; contain-intrinsic-size: auto 800px; }
 .tech-logo:hover .ic { filter: none; transform: translateY(-3px); }
 @media (prefers-reduced-motion: reduce) {
     .cs-stack > [role="tabpanel"] { transition: none; }
-    .caret, .animate-bounce, .animate-pulse { animation: none !important; }
     .reveal { opacity: 1; transform: none; transition: none; }
     html { scroll-behavior: auto !important; }
 }
@@ -164,7 +156,6 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
     --slate-900: 255 255 255; --slate-950: 247 248 246;
     --brand-500: 54 88 73;   --brand-600: 40 66 55;
     --ts-soft: none;
-    --ts-hero: none;
   }
   .band-navy {
     color-scheme: dark;
@@ -175,7 +166,6 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
     --slate-900: 42 53 46;    --slate-950: 32 40 34;
     --brand-500: 183 203 189; --brand-600: 207 223 211;
     --ts-soft: none;
-    --ts-hero: none;
     background-color: rgb(var(--slate-950));
     color: rgb(var(--slate-100));
   }
