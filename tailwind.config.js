@@ -1,7 +1,7 @@
 const v = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 module.exports = {
-  content: ['./index.html'],
+  content: ['./index.html', './js/*.js'],
   theme: {
     extend: {
       fontFamily: { sans: ['Montserrat', 'Montserrat Fallback', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'], mono: ['JetBrains Mono', 'JetBrains Mono Fallback', 'ui-monospace', 'Consolas', 'monospace'] },
