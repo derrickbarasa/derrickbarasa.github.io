@@ -79,15 +79,8 @@ cForm.addEventListener('submit', async e => {
     }
 });
 
-// Reveal on scroll (content stays visible if IntersectionObserver is unavailable)
+// Active nav link (skipped if IntersectionObserver is unavailable)
 if ('IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('section:not(.min-h-screen) > div');
-    // Keep section content visible without decorative entrances.
-    const io = new IntersectionObserver(entries => entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
-    }), { threshold: 0.05 });
-    targets.forEach(t => io.observe(t));
-
     // Active nav link
     const links = document.querySelectorAll('nav .nav-link');
     const spy = new IntersectionObserver(entries => entries.forEach(en => {
@@ -100,23 +93,15 @@ if ('IntersectionObserver' in window) {
 const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Case study tabs: rotate automatically, pause on hover, focus, off-screen or by button; click to jump
+// Case study tabs: click or arrow keys to switch
 (function () {
-    const box = document.getElementById('case-studies');
     const tabs = Array.from(document.querySelectorAll('.cs-tab[role="tab"]'));
     const bar = document.getElementById('cs-controls');
     const panels = document.getElementById('cs-panels');
-    const fill = document.getElementById('cs-fill');
-    const track = document.getElementById('cs-progress');
-    const pauseBtn = document.getElementById('cs-pause');
-    if (!box || !tabs.length || !bar || !panels) return;
+    if (!tabs.length || !bar || !panels) return;
     bar.classList.remove('hidden'); bar.classList.add('flex');
     panels.classList.add('cs-stack');
-    let current = 0, userPaused = false, hover = false, focused = false, inView = false;
-    const auto = false; // Readers choose when to switch case studies.
-    if (auto) track.classList.remove('hidden'); else pauseBtn.classList.add('hidden');
     function show(i) {
-        current = i;
         tabs.forEach((t, k) => {
             const on = k === i;
             t.setAttribute('aria-selected', on);
@@ -126,17 +111,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
             panel.classList.toggle('cs-off', !on);
             panel.setAttribute('aria-hidden', !on);
         });
-        restart();
     }
-    function restart() {
-        if (!auto) return;
-        fill.classList.remove('run'); void fill.offsetWidth; fill.classList.add('run');
-        sync();
-    }
-    function sync() {
-        fill.classList.toggle('paused', userPaused || hover || focused || !inView || document.hidden);
-    }
-    fill.addEventListener('animationend', () => show((current + 1) % tabs.length));
     tabs.forEach((t, k) => {
         t.addEventListener('click', () => show(k));
         t.addEventListener('keydown', e => {
@@ -145,20 +120,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
             tabs[n].focus(); show(n);
         });
     });
-    pauseBtn.addEventListener('click', () => {
-        userPaused = !userPaused;
-        pauseBtn.setAttribute('aria-pressed', userPaused);
-        pauseBtn.setAttribute('aria-label', userPaused ? 'Resume automatic rotation' : 'Pause automatic rotation');
-        sync();
-    });
-    box.addEventListener('mouseenter', () => { hover = true; sync(); });
-    box.addEventListener('mouseleave', () => { hover = false; sync(); });
-    box.addEventListener('focusin', e => { focused = e.target.matches(':focus-visible'); sync(); });
-    box.addEventListener('focusout', () => { focused = false; sync(); });
-    document.addEventListener('visibilitychange', sync);
-    if ('IntersectionObserver' in window) {
-        new IntersectionObserver(en => { inView = en[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(box);
-    } else { inView = true; }
     show(0);
 })();
 
