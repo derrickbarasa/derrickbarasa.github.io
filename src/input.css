@@ -291,3 +291,10 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
   .card-trim:not(.card-open) .card-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: .4rem; }
   .card-trim:not(.card-open) .card-extra { display: none; }
 }
+
+@media (max-width: 640px) {
+  .m-fold > .sub-title { display: none; }
+  .m-fold { margin-bottom: 1rem; }
+  .m-fold[open] > .cs-sum { margin-bottom: .9rem; }
+  .m-fold[open] > .cs-sum .ic { transform: rotate(180deg); }
+}
