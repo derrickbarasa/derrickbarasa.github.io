@@ -243,3 +243,13 @@ document.getElementById('year').textContent = new Date().getFullYear();
         }, { threshold: 0.3 }).observe(v);
     }
 })();
+
+// Services and case studies: collapsed on phones, everything open on larger screens
+(function () {
+    const items = document.querySelectorAll('details.svc, details.cs-wrap');
+    if (!items.length || !window.matchMedia) return;
+    const mq = window.matchMedia('(max-width: 640px)');
+    const apply = () => items.forEach(d => { d.open = !mq.matches; });
+    apply();
+    if (mq.addEventListener) mq.addEventListener('change', apply);
+})();
