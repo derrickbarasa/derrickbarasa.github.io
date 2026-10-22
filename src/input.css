@@ -209,7 +209,9 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
 .steps h3 { font-weight: 700; font-size: .95rem; color: rgb(var(--slate-100)); margin-bottom: .4rem; }
 .steps p { font-size: .85rem; line-height: 1.7; color: rgb(var(--slate-400)); }
 .terms { font-size: .85rem; color: rgb(var(--slate-500)); margin-bottom: 3rem; }
-.faq-list { max-width: 48rem; }
+.faq-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.25rem; align-items: start; }
+.faq-col { display: flex; flex-direction: column; gap: .75rem; min-width: 0; }
+@media (max-width: 800px) { .faq-list { grid-template-columns: minmax(0, 1fr); } }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 4rem; align-items: start; }
