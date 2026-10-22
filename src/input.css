@@ -152,12 +152,12 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
 
 /* Hero */
 .hero { padding: 8.5rem 1.5rem 3rem; }
-.hero-grid { max-width: 70rem; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 3.5rem; align-items: center; }
+.hero-grid { max-width: 70rem; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr); gap: 3.5rem; align-items: center; }
 .hero-where { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--brand-500)); margin-bottom: 1.25rem; }
-.hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.75rem); line-height: 1.08; margin-bottom: 1.5rem; max-width: 15ch; }
+.hero h1 { font-size: clamp(2.3rem, 4vw, 3.3rem); line-height: 1.08; margin-bottom: 1.5rem; max-width: 15ch; }
 .hero-lede { font-size: 1.02rem; line-height: 1.75; color: rgb(var(--slate-300)); max-width: 34rem; }
 .hero-role { font-size: .85rem; line-height: 1.7; color: rgb(var(--slate-500)); margin-top: 1rem; max-width: 34rem; }
-.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.75rem; margin-top: 2rem; font-size: .9rem; font-weight: 600; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 2rem; font-size: .9rem; font-weight: 600; }
 .intro-primary { display: inline-flex; align-items: center; gap: .75rem; padding: .8rem 1.25rem; background: rgb(var(--brand-500)); color: #fff; border-radius: .25rem; transition: background-color .2s; }
 .intro-primary:hover { background: rgb(var(--brand-600)); }
 .intro-secondary { color: rgb(var(--slate-100)); text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 1px; }
