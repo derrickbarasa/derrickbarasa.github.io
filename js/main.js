@@ -195,11 +195,51 @@ document.getElementById('year').textContent = new Date().getFullYear();
     });
 })();
 
-// Back to top
-const toTop = document.getElementById('to-top');
-window.addEventListener('scroll', () => {
-    const show = window.scrollY > 600;
-    toTop.style.opacity = show ? 1 : 0;
-    toTop.style.pointerEvents = show ? 'auto' : 'none';
-}, { passive: true });
-toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+// Hero recordings: one video, three systems. Advances when a clip ends, never autoplays under reduced motion, always pausable
+(function () {
+    const v = document.getElementById('hero-video');
+    const tabs = Array.from(document.querySelectorAll('.hero-tab'));
+    const toggle = document.getElementById('hero-toggle');
+    if (!v || !tabs.length || !toggle) return;
+    const title = document.getElementById('hero-title'), note = document.getElementById('hero-note');
+    const link = document.getElementById('hero-link'), priv = document.getElementById('hero-private');
+    let current = 0, userPaused = false;
+    function setToggle() {
+        toggle.textContent = v.paused ? 'Play' : 'Pause';
+        toggle.setAttribute('aria-pressed', v.paused);
+        toggle.setAttribute('aria-label', v.paused ? 'Play the recordings' : 'Pause the recordings');
+    }
+    function show(i, play) {
+        current = i;
+        tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
+        const t = tabs[i];
+        v.poster = t.dataset.poster;
+        v.src = t.dataset.src;
+        title.textContent = t.dataset.title;
+        note.textContent = t.dataset.note;
+        link.hidden = !t.dataset.href; priv.hidden = !!t.dataset.href;
+        if (t.dataset.href) link.href = t.dataset.href;
+        if (play && !calm) v.play().catch(() => {}); else setToggle();
+    }
+    tabs.forEach((t, k) => {
+        t.addEventListener('click', () => { userPaused = false; show(k, true); });
+        t.addEventListener('keydown', e => {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            const n = (k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+            tabs[n].focus(); userPaused = false; show(n, true);
+        });
+    });
+    v.addEventListener('ended', () => show((current + 1) % tabs.length, !userPaused));
+    v.addEventListener('play', setToggle); v.addEventListener('pause', setToggle);
+    toggle.addEventListener('click', () => {
+        if (v.paused) { userPaused = false; v.play().catch(() => {}); } else { userPaused = true; v.pause(); }
+    });
+    if (calm) { v.autoplay = false; v.pause(); }
+    setToggle();
+    if ('IntersectionObserver' in window && !calm) {
+        new IntersectionObserver(en => {
+            if (userPaused) return;
+            if (en[0].isIntersecting) v.play().catch(() => {}); else v.pause();
+        }, { threshold: 0.3 }).observe(v);
+    }
+})();
