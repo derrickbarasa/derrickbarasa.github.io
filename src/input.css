@@ -283,3 +283,11 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
   .contact-grid { gap: 1.75rem; }
   .wa-float { height: 3rem; min-width: 3rem; right: 1rem; bottom: 1rem; font-size: 1.4rem; }
 }
+
+/* Phones: project cards show a short description, the rest opens with More */
+.card-more { display: none; }
+@media (max-width: 640px) {
+  .card-more { display: inline-block; margin: 0 0 1rem; padding: 0; border: 0; background: none; font: inherit; font-size: .8rem; font-weight: 600; color: rgb(var(--brand-500)); text-decoration: underline; text-underline-offset: .25em; cursor: pointer; }
+  .card-trim:not(.card-open) .card-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: .4rem; }
+  .card-trim:not(.card-open) .card-extra { display: none; }
+}

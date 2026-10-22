@@ -253,3 +253,32 @@ document.getElementById('year').textContent = new Date().getFullYear();
     apply();
     if (mq.addEventListener) mq.addEventListener('change', apply);
 })();
+
+// Project cards on phones: three-line description, details behind a More button
+(function () {
+    const cards = Array.from(document.querySelectorAll('#projects .grid > div')).filter(d => d.querySelector('h4'));
+    if (!cards.length || !window.matchMedia) return;
+    const mq = window.matchMedia('(max-width: 640px)');
+    const parts = cards.map(card => {
+        const top = card.firstElementChild;
+        const head = card.querySelector('h4').parentElement;
+        const desc = head.nextElementSibling;
+        if (!top || !desc || desc.tagName !== 'P') return null;
+        desc.classList.add('card-desc');
+        const extras = Array.from(top.children).filter(el => el !== desc && (el.tagName === 'UL' || (el.tagName === 'P' && el.classList.contains('font-mono'))));
+        extras.forEach(el => el.classList.add('card-extra'));
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'card-more'; btn.textContent = 'More';
+        btn.setAttribute('aria-expanded', 'false');
+        desc.after(btn);
+        btn.addEventListener('click', () => {
+            const open = card.classList.toggle('card-open');
+            btn.textContent = open ? 'Less' : 'More';
+            btn.setAttribute('aria-expanded', open);
+        });
+        return card;
+    }).filter(Boolean);
+    const apply = () => parts.forEach(card => card.classList.toggle('card-trim', mq.matches));
+    apply();
+    if (mq.addEventListener) mq.addEventListener('change', apply);
+})();
