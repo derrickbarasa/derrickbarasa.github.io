@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-fsb4CFuJjfNYvsv5VdYNe24TpjxJMhqFzj4RUC/KGU8=' https://www.googletagmanager.com; connect-src 'self' https://api.web3forms.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-5b+t2F/CH1fPPHjwxhzUvprnSpHfqmGMU26VQu0rQq0=' https://www.googletagmanager.com; connect-src 'self' https://api.web3forms.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <!-- Google tag (gtag.js), loaded after the page so it does not slow the first paint -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -161,7 +161,7 @@
     }
     </script>
     <link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=1d18eabe">
+    <link rel="stylesheet" href="css/style.css?v=b5621ca2">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/sms.webp" fetchpriority="high">
@@ -215,7 +215,6 @@
         </div>
         <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950 px-4 sm:px-6 py-4 space-y-3 text-sm font-medium text-slate-300">
             <a href="#projects" class="block hover:text-brand-500">Work</a>
-            <a href="#arroscape" class="block hover:text-brand-500">Play Arroscape · Early access</a>
             <a href="#services" class="block hover:text-brand-500">Services</a>
             <a href="#about" class="block hover:text-brand-500">About</a>
             <a href="#working" class="block hover:text-brand-500">Process</a>
@@ -228,11 +227,6 @@
 
     <!-- Hero -->
     <section class="hero" aria-labelledby="intro-title">
-        <a class="game-announcement" href="#arroscape">
-            <img src="img/arroscape-icon.png" alt="" width="48" height="48">
-            <span><strong>Arroscape is ready to try.</strong> Get early access to my arrow puzzle game on Android.</span>
-            <span class="game-announcement-action">Get the game <span aria-hidden="true">&rarr;</span></span>
-        </a>
         <div class="hero-grid">
             <div class="hero-copy">
                 <p class="hero-where">Software developer in Nairobi</p>
@@ -261,45 +255,10 @@
         <p class="hero-facts"><span><strong>10</strong> systems built</span><span><strong>7</strong> running live online</span><span><strong>7</strong> different industries</span><span><strong>2</strong> years at remitcore</span></p>
     </section>
 
-    <section id="arroscape" class="sec game-feature" aria-labelledby="arroscape-title">
-        <div class="wrap game-feature-grid">
-            <div class="game-feature-copy">
-                <h2 id="arroscape-title" class="sec-title">Meet Arroscape. Find your way out.</h2>
-                <p class="game-status">Android early access</p>
-                <p class="game-description">A little puzzle for your next quiet moment. Tap an arrow to send it out, clear a path for the others, and untangle the board. Every puzzle has a solution. You have three lives to find it.</p>
-                <ul class="game-highlights">
-                    <li>1,000 campaign levels, plus daily puzzles and weekly events</li>
-                    <li>Play offline, learn with a tutorial, and keep your progress on your device</li>
-                </ul>
-                <p class="game-description">It is not on Google Play yet. Try the Android test build and help me make it better before launch.</p>
-                <div class="game-actions">
-                    <a class="intro-primary" href="files/arroscape/arroscape-0.3.2-early-access.apk" download="arroscape-0.3.2-early-access.apk" aria-describedby="arroscape-download-info">Download for Android</a>
-                    <a class="intro-secondary" href="mailto:barasaderrick499@gmail.com?subject=Arroscape%20early%20access%20feedback">Send feedback</a>
-                </div>
-                <p id="arroscape-download-info" class="game-download-info">v0.3.2 · 76.6 MB APK · Android 7.0 or newer<br>Android only. This download cannot be installed on an iPhone.</p>
-                <details class="game-install">
-                    <summary>How to install &amp; what to expect</summary>
-                    <ol>
-                        <li>Open this page on your Android phone and download the APK above.</li>
-                        <li>Open the downloaded file. If Android asks, allow your browser or file manager to install apps from this source, then return to the file and tap Install.</li>
-                        <li>Open Arroscape and try the tutorial. You can turn the installation permission off again afterward.</li>
-                    </ol>
-                    <p>This is an early test build, so you may encounter bugs. Updates are manual: return here for a newer APK. Progress is saved locally; uninstalling the game or clearing its data can erase it.</p>
-                    <p>If your device blocks installation, follow its on-screen guidance. <a href="https://support.google.com/android/answer/17588095" target="_blank" rel="noopener noreferrer">Google's help for unverified app installs</a>.</p>
-                    <p><a href="files/arroscape/SHA256SUMS.txt">Download checksum (SHA-256)</a></p>
-                </details>
-            </div>
-            <figure class="game-preview">
-                <img src="img/arroscape-home.png" alt="Arroscape on Android, showing daily puzzles, events, league practice and campaign progress" width="1080" height="2340" loading="lazy" decoding="async">
-                <figcaption>From the Android test build.</figcaption>
-            </figure>
-        </div>
-    </section>
-
     <section id="projects" class="sec">
         <div class="wrap">
             <h2 class="sec-title">Systems I have built</h2>
-            <p class="sec-lede">Ten projects. Each card says what the system does and what it is built with. The short videos are silent recordings of the real software.</p>
+            <p class="sec-lede">Ten systems and an Android puzzle game. Each card says what the system does and what it is built with. The short videos are silent recordings of the real software.</p>
 
             <!-- Featured -->
             <h3 class="sub-title">Live products</h3>
@@ -405,7 +364,7 @@
             </div>
 
             <!-- Group 2: Enterprise Systems -->
-            <h3 class="sub-title">Larger business systems</h3>
+            <h3 class="sub-title">Business systems and apps</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
 <!-- Couture -->
@@ -513,6 +472,39 @@
                         <div class="flex flex-wrap items-center justify-between gap-2 text-[12px] font-mono"><span class="text-slate-500"><svg class="ic" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><use href="#i4"/></svg> Built and tested locally</span><span class="text-slate-500 flex items-center gap-1.5"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><use href="#i14"/></svg> Private repo, code on request</span></div>
                     </div>
                 </div>
+                <!-- Arroscape -->
+                <div id="arroscape" class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <div class="game-card-preview -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-5 rounded-t-xl overflow-hidden border-b border-slate-800/80">
+                            <img src="img/arroscape-home.png" alt="Arroscape Android home screen with daily puzzles and campaign levels" width="1080" height="2340" loading="lazy" decoding="async">
+                        </div>
+                        <div class="flex justify-between items-start gap-2 mb-3">
+                            <h4 class="text-lg font-bold text-white">Arroscape</h4>
+                            <span class="text-xs font-mono bg-brand-500/10 text-brand-500 px-2 py-0.5 rounded">Early access</span>
+                        </div>
+                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">An arrow puzzle game. Clear a path and untangle each board with three lives. Includes 1,000 campaign levels, daily puzzles and weekly events, with offline play and progress saved on your device.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4"><span class="text-xs font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Flutter</span><span class="text-xs font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Dart</span></div>
+                        <div class="game-actions">
+                            <a class="intro-primary" href="files/arroscape/arroscape-0.3.2-early-access.apk" download="arroscape-0.3.2-early-access.apk" aria-describedby="arroscape-download-info">Download for Android</a>
+                            <a class="intro-secondary" href="#contact" data-feedback="arroscape">Send feedback</a>
+                        </div>
+                        <p id="arroscape-download-info" class="game-download-info">v0.3.2 &middot; 76.6 MB APK &middot; Android 7.0+<br>Android test build. Not on Google Play yet.</p>
+                <details class="game-install">
+                    <summary>How to install &amp; what to expect</summary>
+                    <ol>
+                        <li>Open this page on your Android phone and download the APK above.</li>
+                        <li>Open the downloaded file. If Android asks, allow your browser or file manager to install apps from this source, then return to the file and tap Install.</li>
+                        <li>Open Arroscape and try the tutorial. You can turn the installation permission off again afterward.</li>
+                    </ol>
+                    <p>This is an early test build, so you may encounter bugs. Updates are manual: return here for a newer APK. Progress is saved locally; uninstalling the game or clearing its data can erase it.</p>
+                    <p>If your device blocks installation, follow its on-screen guidance. <a href="https://support.google.com/android/answer/17588095" target="_blank" rel="noopener noreferrer">Google's help for unverified app installs</a>.</p>
+                    <p><a href="files/arroscape/SHA256SUMS.txt">Download checksum (SHA-256)</a></p>
+                </details>
+                    </div>
+                </div>
+
             </div>
 
             <details class="more-projects mb-12">
@@ -894,6 +886,7 @@
                         <option>Job offer</option>
                         <option>Contract or project</option>
                         <option>Collaboration</option>
+                        <option>Arroscape feedback</option>
                         <option>Something else</option>
                     </select>
                 </div>
@@ -968,6 +961,6 @@
 
     <a id="wa-float" href="https://wa.me/254793539606?text=Hi%20Derrick%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener noreferrer" aria-label="Chat with Derrick on WhatsApp" class="wa-float"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><use href="#i17"/></svg><span class="wa-label">Chat on WhatsApp</span></a>
 
-    <script src="js/main.js?v=5a2b9a6b" defer></script>
+    <script src="js/main.js?v=e25ed7c2" defer></script>
 </body>
 </html>

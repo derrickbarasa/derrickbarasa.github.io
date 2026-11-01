@@ -42,8 +42,24 @@ function cSay(text, kind) {
 // Show the timeline/budget box only for project enquiries
 const cTopic = document.getElementById('cf-topic');
 const cDetailWrap = document.getElementById('cf-detail-wrap');
-cTopic.addEventListener('change', () => cDetailWrap.classList.toggle('hidden', cTopic.value !== 'Contract or project'));
-cForm.addEventListener('reset', () => cDetailWrap.classList.add('hidden'));
+cTopic.addEventListener('change', () => {
+    cDetailWrap.classList.toggle('hidden', cTopic.value !== 'Contract or project');
+    document.getElementById('cf-msg').placeholder = cTopic.value === 'Arroscape feedback'
+        ? 'What worked or went wrong? For a bug, include your phone model, Android version and the steps to reproduce it.' : '';
+});
+cForm.addEventListener('reset', () => {
+    cDetailWrap.classList.add('hidden');
+    document.getElementById('cf-msg').placeholder = '';
+});
+document.querySelectorAll('[data-feedback="arroscape"]').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        cTopic.value = 'Arroscape feedback';
+        cTopic.dispatchEvent(new Event('change'));
+        cSay('Share your Arroscape feedback below. Include your phone model and game version if you found a bug.', '');
+        document.getElementById('cf-msg').focus();
+    });
+});
 cForm.addEventListener('submit', async e => {
     e.preventDefault();
     if (!cForm.checkValidity()) { cForm.reportValidity(); return; }
