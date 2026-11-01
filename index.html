@@ -161,7 +161,7 @@
     }
     </script>
     <link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=a1ff57c6">
+    <link rel="stylesheet" href="css/style.css?v=1d18eabe">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/sms.webp" fetchpriority="high">
@@ -215,6 +215,7 @@
         </div>
         <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950 px-4 sm:px-6 py-4 space-y-3 text-sm font-medium text-slate-300">
             <a href="#projects" class="block hover:text-brand-500">Work</a>
+            <a href="#arroscape" class="block hover:text-brand-500">Play Arroscape · Early access</a>
             <a href="#services" class="block hover:text-brand-500">Services</a>
             <a href="#about" class="block hover:text-brand-500">About</a>
             <a href="#working" class="block hover:text-brand-500">Process</a>
@@ -227,6 +228,11 @@
 
     <!-- Hero -->
     <section class="hero" aria-labelledby="intro-title">
+        <a class="game-announcement" href="#arroscape">
+            <img src="img/arroscape-icon.png" alt="" width="48" height="48">
+            <span><strong>Arroscape is ready to try.</strong> Get early access to my arrow puzzle game on Android.</span>
+            <span class="game-announcement-action">Get the game <span aria-hidden="true">&rarr;</span></span>
+        </a>
         <div class="hero-grid">
             <div class="hero-copy">
                 <p class="hero-where">Software developer in Nairobi</p>
@@ -253,6 +259,41 @@
             </figure>
         </div>
         <p class="hero-facts"><span><strong>10</strong> systems built</span><span><strong>7</strong> running live online</span><span><strong>7</strong> different industries</span><span><strong>2</strong> years at remitcore</span></p>
+    </section>
+
+    <section id="arroscape" class="sec game-feature" aria-labelledby="arroscape-title">
+        <div class="wrap game-feature-grid">
+            <div class="game-feature-copy">
+                <h2 id="arroscape-title" class="sec-title">Meet Arroscape. Find your way out.</h2>
+                <p class="game-status">Android early access</p>
+                <p class="game-description">A little puzzle for your next quiet moment. Tap an arrow to send it out, clear a path for the others, and untangle the board. Every puzzle has a solution. You have three lives to find it.</p>
+                <ul class="game-highlights">
+                    <li>1,000 campaign levels, plus daily puzzles and weekly events</li>
+                    <li>Play offline, learn with a tutorial, and keep your progress on your device</li>
+                </ul>
+                <p class="game-description">It is not on Google Play yet. Try the Android test build and help me make it better before launch.</p>
+                <div class="game-actions">
+                    <a class="intro-primary" href="files/arroscape/arroscape-0.3.2-early-access.apk" download="arroscape-0.3.2-early-access.apk" aria-describedby="arroscape-download-info">Download for Android</a>
+                    <a class="intro-secondary" href="mailto:barasaderrick499@gmail.com?subject=Arroscape%20early%20access%20feedback">Send feedback</a>
+                </div>
+                <p id="arroscape-download-info" class="game-download-info">v0.3.2 · 76.6 MB APK · Android 7.0 or newer<br>Android only. This download cannot be installed on an iPhone.</p>
+                <details class="game-install">
+                    <summary>How to install &amp; what to expect</summary>
+                    <ol>
+                        <li>Open this page on your Android phone and download the APK above.</li>
+                        <li>Open the downloaded file. If Android asks, allow your browser or file manager to install apps from this source, then return to the file and tap Install.</li>
+                        <li>Open Arroscape and try the tutorial. You can turn the installation permission off again afterward.</li>
+                    </ol>
+                    <p>This is an early test build, so you may encounter bugs. Updates are manual: return here for a newer APK. Progress is saved locally; uninstalling the game or clearing its data can erase it.</p>
+                    <p>If your device blocks installation, follow its on-screen guidance. <a href="https://support.google.com/android/answer/17588095" target="_blank" rel="noopener noreferrer">Google's help for unverified app installs</a>.</p>
+                    <p><a href="files/arroscape/SHA256SUMS.txt">Download checksum (SHA-256)</a></p>
+                </details>
+            </div>
+            <figure class="game-preview">
+                <img src="img/arroscape-home.png" alt="Arroscape on Android, showing daily puzzles, events, league practice and campaign progress" width="1080" height="2340" loading="lazy" decoding="async">
+                <figcaption>From the Android test build.</figcaption>
+            </figure>
+        </div>
     </section>
 
     <section id="projects" class="sec">
@@ -478,7 +519,7 @@
                 <summary class="more-bar">
                     <span class="more-bar-text">
                         <span class="when-closed more-bar-title">Show 3 more projects</span><span class="when-open more-bar-title">Show fewer projects</span>
-                        <span class="more-bar-sub">Tayari CRM website, Derrick Gallery, remitcore, 3 small tools and 4 projects in development</span>
+                        <span class="more-bar-sub">Tayari CRM website, Derrick Gallery, remitcore, 3 small tools and 3 projects in development</span>
                     </span>
                     <span class="more-bar-icon"><svg class="ic chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><use href="#i15"/></svg></span>
                 </summary>
@@ -581,7 +622,7 @@
             <p class="text-slate-400 text-sm font-mono flex flex-wrap items-center gap-x-3 gap-y-1"><a href="https://github.com/derrickbarasa/timer" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Timer</a> <span class="text-slate-500">(C)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/translater" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Translator</a> <span class="text-slate-500">(Python)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/avatar" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Avatar Maker</a> <span class="text-slate-500">(Python)</span></p>
             <!-- Group 4: In development -->
             <h3 class="sub-title">In development</h3>
-            <p class="text-slate-400 text-sm mb-6 -mt-2 max-w-2xl">Four projects that are not live yet. Three are systems with the server side built and the screens still to come, and one is a game you can already play.</p>
+            <p class="text-slate-400 text-sm mb-6 -mt-2 max-w-2xl">Three systems in development, with the server side built and the screens still to come.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                 <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
                     <div class="flex justify-between items-start mb-4">
@@ -621,19 +662,7 @@
                     <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Java</span><span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">MySQL</span></div>
                     <span class="text-slate-500 text-[12px] font-mono">Backend only so far. Front end to come. Code on request.</span>
                 </div>
-                <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="text-xl font-bold text-white">Arroscape</h4>
-                        <span class="text-xs font-mono bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded border border-amber-500/20">In development</span>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">An arrow puzzle game for phones and the browser. Tap an arrow to send it out along its path, but not if another arrow is in the way. Three lives, and every board can be solved.</p>
-                    <ul class="text-xs text-slate-400 space-y-2 mb-4 font-mono">
-                        <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><use href="#i3"/></svg> Campaign levels shaped like a bird, guitar, fox, rocket and more, plus daily puzzles and a weekly event</li>
-                        <li class="flex items-center gap-2"><svg class="ic text-brand-500" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><use href="#i3"/></svg> Saves your progress on the device, with a first-play tutorial and sound</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Flutter</span><span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-300 rounded">Dart</span></div>
-                    <span class="text-slate-500 text-[12px] font-mono">Fully playable, with automated tests. Being polished and tested on phones. Demo on request.</span>
-                </div>
+
             </div>
             </details>
 
