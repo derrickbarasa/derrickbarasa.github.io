@@ -178,6 +178,10 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
 .hero-facts { max-width: 70rem; margin: 3.5rem auto 0; padding-top: 1.25rem; border-top: 1px solid rgb(var(--slate-800)); display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; font-size: .85rem; color: rgb(var(--slate-400)); }
 .hero-facts strong { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.3rem; font-weight: 600; color: rgb(var(--slate-100)); margin-right: .3rem; }
 
+/* Match the business video previews to the live-product screenshots. */
+#projects video[src="img/canteen.mp4"],
+#projects video[src="img/hospital.mp4"] { aspect-ratio: 1568 / 774; }
+
 /* Arroscape project card */
 .game-card-preview { height: 12rem; background: #fcf5fc; display: flex; justify-content: center; }
 .game-card-preview img { height: 100%; width: auto; object-fit: contain; }
