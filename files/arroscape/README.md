@@ -4,7 +4,7 @@ The portfolio serves `arroscape-0.3.2-early-access.apk` directly as a static fil
 
 ## Included build
 
-- Source: `C:\Users\USER\Desktop\apps\arrows\dist\arroscape-android-test.apk`
+- Source: `arroscape-android-test.apk` from the app distribution directory
 - Version: 0.3.2 (14), package `com.nightcurrent.arrows`
 - Existing profile test build, signed with the app's current test key
 - Android 7.0 / API 24 minimum; ARM 32-bit, ARM 64-bit and x86_64
