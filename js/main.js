@@ -84,6 +84,7 @@ cForm.addEventListener('submit', async e => {
         const data = await res.json();
         if (res.ok && data.success) {
             cForm.reset();
+            if (typeof gtag === 'function') gtag('event', 'contact_form_sent', { topic });
             cSay('Thank you! Your message was sent. I will get back to you soon.', 'ok');
         } else {
             throw new Error(data.message || 'Request failed');
@@ -297,4 +298,23 @@ document.getElementById('year').textContent = new Date().getFullYear();
     const apply = () => parts.forEach(card => card.classList.toggle('card-trim', mq.matches));
     apply();
     if (mq.addEventListener) mq.addEventListener('change', apply);
+})();
+
+// Click events for the actions worth measuring (analytics consent still applies)
+document.addEventListener('click', e => {
+    const el = e.target.closest('[data-track]');
+    if (el && typeof gtag === 'function') gtag('event', el.dataset.track, { link_url: el.getAttribute('href') || '' });
+});
+
+// Arroscape is an Android app: on other devices, say so and offer to copy the link for a phone
+(function () {
+    const note = document.getElementById('arroscape-desktop-note');
+    if (!note || /Android/i.test(navigator.userAgent)) return;
+    const copy = document.getElementById('arroscape-copy');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        copy.addEventListener('click', () => {
+            navigator.clipboard.writeText(location.origin + '/#arroscape').then(() => { copy.textContent = 'Link copied'; }, () => {});
+        });
+    } else { copy.remove(); }
+    note.hidden = false;
 })();

@@ -161,7 +161,7 @@
     }
     </script>
     <link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=81d2cb92">
+    <link rel="stylesheet" href="css/style.css?v=0b0dc6ad">
     <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="img/sms.webp" fetchpriority="high">
@@ -236,7 +236,7 @@
                 <div class="hero-actions">
                     <a class="intro-primary" href="#projects">See what I have built <span aria-hidden="true">&darr;</span></a>
                     <a class="intro-secondary" href="#contact">Hire me for a project</a>
-                    <a class="intro-secondary" href="files/Derrick-Barasa-Resume.pdf" download>Resume</a>
+                    <a class="intro-secondary" href="files/Derrick-Barasa-Resume.pdf" download data-track="resume_download">Resume</a>
                 </div>
             </div>
             <figure class="hero-demo" aria-label="Screen recordings of three systems I built">
@@ -489,10 +489,11 @@
                     <div>
                         <div class="flex flex-wrap gap-1.5 mb-4"><span class="text-xs font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Flutter</span><span class="text-xs font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded">Dart</span></div>
                         <div class="game-actions">
-                            <a class="intro-primary" href="files/arroscape/arroscape-0.3.2-early-access.apk" download="arroscape-0.3.2-early-access.apk" aria-describedby="arroscape-download-info">Download for Android</a>
-                            <a class="intro-secondary" href="#contact" data-feedback="arroscape">Send feedback</a>
+                            <a class="intro-primary" href="files/arroscape/arroscape-0.3.2-early-access.apk" download="arroscape-0.3.2-early-access.apk" aria-describedby="arroscape-download-info" data-track="arroscape_apk_download">Download for Android</a>
+                            <a class="intro-secondary" href="#contact" data-feedback="arroscape" data-track="arroscape_feedback_click">Send feedback</a>
                         </div>
                         <p id="arroscape-download-info" class="game-download-info">v0.3.2 &middot; 76.6 MB APK &middot; Android 7.0+<br>Android test build. Not on Google Play yet.</p>
+                        <p id="arroscape-desktop-note" class="game-download-info" hidden>On a computer? This is an Android app. Open this page on your phone to install it. <button type="button" id="arroscape-copy" class="game-copy" data-track="arroscape_copy_link">Copy link</button></p>
                 <details class="game-install">
                     <summary>How to install &amp; what to expect</summary>
                     <ol>
@@ -513,7 +514,7 @@
                 <summary class="more-bar">
                     <span class="more-bar-text">
                         <span class="when-closed more-bar-title">Show 3 more projects</span><span class="when-open more-bar-title">Show fewer projects</span>
-                        <span class="more-bar-sub">Tayari CRM website, Derrick Gallery, remitcore, 3 small tools and 4 projects in development</span>
+                        <span class="more-bar-sub">Tayari CRM website, Derrick Gallery, remitcore, 4 small tools and 4 projects in development</span>
                     </span>
                     <span class="more-bar-icon"><svg class="ic chev" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><use href="#i15"/></svg></span>
                 </summary>
@@ -612,8 +613,8 @@
 
             <!-- Group 3: Side projects -->
             <h3 class="sub-title">Side Projects</h3>
-            <p class="text-slate-400 text-sm mb-6 -mt-2 max-w-2xl">Three small builds made for fun and practice, with source on GitHub. Not in production.</p>
-            <p class="text-slate-400 text-sm font-mono flex flex-wrap items-center gap-x-3 gap-y-1"><a href="https://github.com/derrickbarasa/timer" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Timer</a> <span class="text-slate-500">(C)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/translater" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Translator</a> <span class="text-slate-500">(Python)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/avatar" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Avatar Maker</a> <span class="text-slate-500">(Python)</span></p>
+            <p class="text-slate-400 text-sm mb-6 -mt-2 max-w-2xl">Four small builds made for fun and practice, with source on GitHub. Not in production.</p>
+            <p class="text-slate-400 text-sm font-mono flex flex-wrap items-center gap-x-3 gap-y-1"><a href="https://github.com/derrickbarasa/timer" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Timer</a> <span class="text-slate-500">(C)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/translater" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Translator</a> <span class="text-slate-500">(Python)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/avatar" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Avatar Maker</a> <span class="text-slate-500">(Python)</span><span class="text-slate-600" aria-hidden="true">&bull;</span><a href="https://github.com/derrickbarasa/web-crawler" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-600 transition-colors">Content Crawler</a> <span class="text-slate-500">(Java, Vue)</span></p>
             <!-- Group 4: In development -->
             <h3 class="sub-title">In development</h3>
             <p class="text-slate-400 text-sm mb-6 -mt-2 max-w-2xl">Four systems in development, with the server side built and the screens still to come.</p>
@@ -976,6 +977,6 @@
 
     <a id="wa-float" href="https://wa.me/254793539606?text=Hi%20Derrick%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener noreferrer" aria-label="Chat with Derrick on WhatsApp" class="wa-float"><svg class="ic" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><use href="#i17"/></svg><span class="wa-label">Chat on WhatsApp</span></a>
 
-    <script src="js/main.js?v=e25ed7c2" defer></script>
+    <script src="js/main.js?v=69960aa4" defer></script>
 </body>
 </html>
