@@ -21,3 +21,7 @@ The binary was copied unchanged and matched the source distribution checksum and
 4. Run `npm run build` and deploy the APK, checksum, HTML, images and compiled CSS together.
 
 There is no automatic updater. Visitors return to the portfolio for newer builds. Before a production release, set up the app's permanent release signing configuration in the app repository.
+
+## Hosting future builds
+
+This 76 MB APK is committed once and stays under GitHub's 100 MB file limit, but every new APK committed here adds roughly 76 MB to the repository history. For later versions, publish the APK as a GitHub Release asset (or another file host) instead of committing it, then point the download link in `index.html` at that URL and keep only `SHA256SUMS.txt` here.

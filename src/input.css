@@ -183,8 +183,10 @@ input::placeholder, textarea::placeholder { color: rgb(var(--slate-500)); opacit
 #projects video[src="img/hospital.mp4"] { aspect-ratio: 1568 / 774; }
 
 /* Arroscape project card */
-.game-card-preview { height: 12rem; background: #fcf5fc; display: flex; justify-content: center; }
-.game-card-preview img { height: 100%; width: auto; object-fit: contain; }
+.game-shots { display: flex; gap: .6rem; padding: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; background: #fcf5fc; scrollbar-width: thin; }
+.game-shots:focus-visible { outline: 2px solid rgb(var(--brand-500)); outline-offset: -2px; }
+.game-shots .shot { position: relative; flex: 0 0 auto; width: 9.5rem; scroll-snap-align: start; border-radius: .6rem; overflow: hidden; border: 1px solid #ead9ea; }
+.game-shots img { display: block; width: 100%; height: auto; aspect-ratio: 540 / 1085; object-fit: cover; }
 .game-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1rem; font-size: .8rem; font-weight: 600; }
 .game-download-info { margin-top: .85rem; font-size: .75rem; line-height: 1.8; color: rgb(var(--slate-500)); }
 .game-install { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgb(var(--slate-800)); font-size: .8rem; line-height: 1.8; color: rgb(var(--slate-400)); }
