@@ -1,1 +1,1 @@
-3cff6189af7d55f8395f91450bd2f5d9c89d39a20d39d34c99be343b823b6246  arroscape-0.3.3-early-access.apk
+803898b22cdeb9954f2d26832d58a1e4fcc95dff4609994f4c3f7e4397c69153  arroscape-0.3.4-early-access.apk
