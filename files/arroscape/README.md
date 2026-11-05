@@ -1,17 +1,17 @@
 # Arroscape early access
 
-The portfolio serves `arroscape-0.3.4-early-access.apk` directly as a static file. Deploy this directory with the rest of the site. No Play Store listing or server-side install service is needed. Downloading on a computer saves an Android APK; installation happens on an Android device.
+The portfolio serves `arroscape-0.3.5-early-access.apk` directly as a static file. Deploy this directory with the rest of the site. No Play Store listing or server-side install service is needed. Downloading on a computer saves an Android APK; installation happens on an Android device.
 
 ## Included build
 
-- Source: `app-profile.apk` built from the app repository at commit c7b85b2 (extreme levels with four lives, campaign result screens, plus burst arrows, per-level arrow colors and the indigo home redesign)
-- Version: 0.3.4 (16), package `com.nightcurrent.arrows`
-- Profile test build, signed with the same test key as 0.3.2 and 0.3.3 so it updates in place (signer SHA-256 293b35b9...bb90)
-- Android 7.0 / API 24 minimum; ARM 32-bit, ARM 64-bit and x86_64
-- Size: 76817896 bytes
-- SHA-256: `803898b22cdeb9954f2d26832d58a1e4fcc95dff4609994f4c3f7e4397c69153`
+- Source: release build from the app repository at commit a5fa8bf plus the 0.3.5+17 version bump (flattened single-blue home cards and result screen, on top of 0.3.4's extreme levels and campaign result screens)
+- Version: 0.3.5 (17), package `com.nightcurrent.arrows`
+- Release build, signed with the same test key as 0.3.2 to 0.3.4 so it updates in place (signer SHA-256 293b35b9...bb90). Verified with apksigner; installed over 0.3.4 on a Samsung SM-A165F
+- Android 7.0 / API 24 minimum; ARM 32-bit and ARM 64-bit (phones only; the x86_64 emulator libraries were dropped to halve the download)
+- Size: 36731192 bytes (the 0.3.4 profile build was 76817896)
+- SHA-256: `467974e2aa02f2ccf1e9d77ea1af7f351d59b2b489241c578780c9908d0712e8`
 
-The binary was copied unchanged from the build output; installed and launched on a Samsung SM-A165F. This is an early test distribution, not a newly built production release. Keep the signing key and package identity consistent for updates. A future Play Store release signed with a different key may require testers to uninstall this build, losing local progress.
+Built with `flutter build apk --release --target-platform android-arm,android-arm64`. This is an early test distribution. Keep the signing key and package identity consistent for updates. A future Play Store release signed with a different key may require testers to uninstall this build, losing local progress.
 
 ## Updating
 
@@ -24,4 +24,4 @@ There is no automatic updater. Visitors return to the portfolio for newer builds
 
 ## Hosting future builds
 
-This 76 MB APK is committed once and stays under GitHub's 100 MB file limit, but every new APK committed here adds roughly 76 MB to the repository history. For later versions, publish the APK as a GitHub Release asset (or another file host) instead of committing it, then point the download link in `index.html` at that URL and keep only `SHA256SUMS.txt` here.
+This 37 MB APK is committed once and stays under GitHub's 100 MB file limit, but every new APK committed here adds roughly 37 MB to the repository history. For later versions, publish the APK as a GitHub Release asset (or another file host) instead of committing it, then point the download link in `index.html` at that URL and keep only `SHA256SUMS.txt` here.
