@@ -235,7 +235,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
         title.textContent = t.dataset.title;
         note.textContent = t.dataset.note;
         link.hidden = !t.dataset.href; priv.hidden = !!t.dataset.href;
-        if (t.dataset.href) link.href = t.dataset.href;
+        if (t.dataset.href) { link.href = t.dataset.href; link.textContent = t.dataset.label || 'Open the live system ↗'; }
         if (play && !calm) v.play().catch(() => {}); else setToggle();
     }
     tabs.forEach((t, k) => {
